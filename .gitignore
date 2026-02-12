@@ -1,9 +1,8 @@
 /node_modules
+/.next
 /dist
 /build
 /out
-/public
-/src
 /test
 /test-results
 /test-results.xml
