@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Linkedin, Twitter, Instagram } from "lucide-react";
+import Image from "next/image";
+import { Linkedin, Instagram, Facebook } from "lucide-react";
+import logo from "@/assets/images/logo-white.png";
 
 const services = [
   { href: "/services#digital-transformation", label: "Digital Transformation" },
@@ -17,8 +19,8 @@ const company = [
 ];
 
 const social = [
-  { href: "https://www.linkedin.com/company/petvottech", icon: Linkedin },
-  { href: "https://twitter.com/petvottech", icon: Twitter },
+  { href: "https://www.linkedin.com/company/petvot-technologies", icon: Linkedin },
+  { href: "https://twitter.com/petvottech", icon: Facebook },
   { href: "https://www.instagram.com/petvottech", icon: Instagram },
 ];
 
@@ -28,12 +30,16 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 font-heading text-xl font-bold"
-            >
-              <span className="text-primary">Petvot</span>
-              <span>Tech</span>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image
+                src={logo}
+                alt="Petvot Technologies logo"
+                width={160}
+                height={48}
+                className="w-48 h-14 object-cover object-center"
+                quality={100}
+                unoptimized
+              />
             </Link>
             <p className="text-sm text-neutral-400 max-w-xs">
               Technology That Grows With Your Business

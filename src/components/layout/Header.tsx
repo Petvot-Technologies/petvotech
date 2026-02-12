@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { ScheduleCallButton } from "@/components/ScheduleCallButton";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/images/logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -23,12 +25,17 @@ export function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-heading text-xl font-bold text-neutral-900"
-        >
-          <span className="text-primary">Petvot</span>
-          <span>Tech</span>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src={logo}
+            alt="Petvot Technologies logo"
+            width={160}
+            height={48}
+            className="w-48 h-14 object-cover object-center"
+            quality={100}
+            priority
+            unoptimized
+          />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
