@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Brand */
+  --color-primary: #f25c05;
+  --color-primary-hover: #f36816;
+  --color-primary-light: #fef5f0;
+  --color-primary-dark: #d94f04;
+
+  /* Neutrals */
+  --color-neutral-900: #040404;
+  --color-neutral-800: #1a1a1a;
+  --color-neutral-700: #333333;
+  --color-neutral-600: #4d4d4d;
+  --color-neutral-500: #6b6b6b;
+  --color-neutral-400: #999999;
+  --color-neutral-300: #b3b3b3;
+  --color-neutral-200: #d6d6d6;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-50: #fafafa;
+  --color-neutral-0: #ffffff;
+
+  /* Accent */
+  --color-cream: #fce0c1;
+  --color-cream-dark: #f9d4ad;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #f25c05 0%, #f36816 100%);
+  --gradient-cream: linear-gradient(180deg, #fce0c1 0%, #fef5f0 100%);
+  --gradient-dark: linear-gradient(135deg, #040404 0%, #1a1a1a 100%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-neutral-700 antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-neutral-900;
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  @apply absolute left-4 top-4 -translate-y-16 rounded-lg bg-primary px-4 py-2 text-white transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+.sr-only {
+  @apply absolute h-px w-px overflow-hidden whitespace-nowrap border-0 p-0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
+/* Focus visible for keyboard nav */
+.focus-visible\:ring-primary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
