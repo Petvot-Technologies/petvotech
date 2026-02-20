@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Clock } from "lucide-react";
+import { Clock, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const SLOTS: { value: string; label: string }[] = [
@@ -94,6 +94,7 @@ export function TimePicker({
         <span className={value ? "text-neutral-900" : "text-neutral-400"}>
           {value ? labelFor(value) : placeholder}
         </span>
+        <ChevronDown className="ml-auto h-5 w-5 shrink-0 text-neutral-400" />
       </button>
       {open && (
         <div

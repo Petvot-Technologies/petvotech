@@ -1,0 +1,331 @@
+<svg width="620" height="400" viewBox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="editorBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1B2E"/>
+      <stop offset="100%" stop-color="#0F1020"/>
+    </linearGradient>
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="cardWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FDF8F5"/>
+    </linearGradient>
+    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#00000020"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000015"/>
+    </filter>
+    <filter id="ambientBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="smallShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00000018"/>
+    </filter>
+    <style>
+      @keyframes floatUp   { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-6px)} }
+      @keyframes floatDown { 0%,100%{transform:translateY(0)}  50%{transform:translateY(5px)} }
+      @keyframes floatSlow { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-4px)} }
+      .grp-editor  { animation: floatUp 5s ease-in-out infinite; }
+      .grp-term    { animation: floatDown 4.5s ease-in-out infinite; }
+      .grp-web     { animation: floatUp 4s ease-in-out infinite; }
+      .grp-mobile  { animation: floatSlow 5.5s ease-in-out infinite; }
+      .grp-api     { animation: floatDown 4.8s ease-in-out infinite; }
+    </style>
+    <path id="pWeb"    d="M 292,195 Q 220,190 164,230"/>
+    <path id="pMobile" d="M 310,205 Q 310,270 310,308"/>
+    <path id="pAPI"    d="M 328,195 Q 400,188 455,222"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="620" height="400" fill="#F3F2F0"/>
+
+  <!-- Ambient glow -->
+  <circle cx="310" cy="200" r="90" fill="#F97316" filter="url(#ambientBlur)" opacity="0.06"/>
+  <circle cx="140" cy="240" r="50" fill="#FB923C" filter="url(#ambientBlur)" opacity="0.05"/>
+  <circle cx="480" cy="240" r="50" fill="#FB923C" filter="url(#ambientBlur)" opacity="0.05"/>
+
+  <!-- CENTER: CODE EDITOR CARD -->
+  <g class="grp-editor" filter="url(#softShadow)">
+    <rect x="152" y="68" width="316" height="212" rx="14" fill="url(#editorBg)"/>
+    <rect x="152" y="68" width="316" height="32" rx="14" fill="#252641"/>
+    <rect x="152" y="82" width="316" height="18" fill="#252641"/>
+    <circle cx="174" cy="84" r="5" fill="#FF5F57"/>
+    <circle cx="190" cy="84" r="5" fill="#FFBD2E"/>
+    <circle cx="206" cy="84" r="5" fill="#28C840"/>
+    <rect x="222" y="74" width="82" height="20" rx="5" fill="#1A1B2E" opacity="0.9"/>
+    <text x="233" y="88" font-family="'Courier New',monospace" font-size="9" fill="#9CA3AF">app.js</text>
+    <circle cx="296" cy="84" r="3" fill="#F97316" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="152" y="100" width="28" height="180" fill="#1E1F33"/>
+    <text x="164" y="118" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">1</text>
+    <text x="164" y="132" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">2</text>
+    <text x="164" y="146" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">3</text>
+    <text x="164" y="160" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">4</text>
+    <text x="164" y="174" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">5</text>
+    <text x="164" y="188" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">6</text>
+    <text x="164" y="202" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">7</text>
+    <text x="164" y="216" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">8</text>
+    <text x="164" y="230" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">9</text>
+    <text x="164" y="244" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">10</text>
+    <text x="164" y="258" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">11</text>
+    <text x="164" y="272" font-family="'Courier New',monospace" font-size="8" fill="#4B5563" text-anchor="middle">12</text>
+    <rect x="180" y="198" width="284" height="14" rx="2" fill="#F97316" opacity="0.07"/>
+    <text x="186" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#C084FC">const</text>
+    <text x="224" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#60A5FA">app</text>
+    <text x="246" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">=</text>
+    <text x="255" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#34D399">require</text>
+    <text x="302" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">(</text>
+    <text x="310" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#FDBA74">'express'</text>
+    <text x="366" y="118" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">);</text>
+    <text x="186" y="146" font-family="'Courier New',monospace" font-size="9.5" fill="#6B7280">// API endpoint</text>
+    <text x="186" y="160" font-family="'Courier New',monospace" font-size="9.5" fill="#60A5FA">app</text>
+    <text x="208" y="160" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">.</text>
+    <text x="213" y="160" font-family="'Courier New',monospace" font-size="9.5" fill="#34D399">get</text>
+    <text x="233" y="160" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">(</text>
+    <text x="240" y="160" font-family="'Courier New',monospace" font-size="9.5" fill="#FDBA74">'/api/users'</text>
+    <text x="318" y="160" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">,</text>
+    <text x="186" y="174" font-family="'Courier New',monospace" font-size="9.5" fill="#C084FC">async</text>
+    <text x="224" y="174" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">(req, res) =&gt; {</text>
+    <text x="198" y="188" font-family="'Courier New',monospace" font-size="9.5" fill="#C084FC">const</text>
+    <text x="236" y="188" font-family="'Courier New',monospace" font-size="9.5" fill="#60A5FA">users</text>
+    <text x="269" y="188" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">=</text>
+    <text x="279" y="188" font-family="'Courier New',monospace" font-size="9.5" fill="#C084FC">await</text>
+    <text x="198" y="202" font-family="'Courier New',monospace" font-size="9.5" fill="#34D399">
+      <animate attributeName="textLength" values="0;126" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+      User.findAll()
+    </text>
+    <rect x="198" y="193" width="1.5" height="11" fill="#F97316">
+      <animateTransform attributeName="transform" type="translate" values="0,0;126,0;126,0;0,0" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="opacity" values="1;1;0;1" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="198" y="216" font-family="'Courier New',monospace" font-size="9.5" fill="#60A5FA">res</text>
+    <text x="220" y="216" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">.</text>
+    <text x="225" y="216" font-family="'Courier New',monospace" font-size="9.5" fill="#34D399">json</text>
+    <text x="253" y="216" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">({ users });</text>
+    <text x="186" y="230" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">});</text>
+    <text x="186" y="272" font-family="'Courier New',monospace" font-size="9.5" fill="#60A5FA">app</text>
+    <text x="208" y="272" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">.</text>
+    <text x="213" y="272" font-family="'Courier New',monospace" font-size="9.5" fill="#34D399">listen</text>
+    <text x="253" y="272" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">(</text>
+    <text x="260" y="272" font-family="'Courier New',monospace" font-size="9.5" fill="#FDBA74">3000</text>
+    <text x="286" y="272" font-family="'Courier New',monospace" font-size="9.5" fill="#E2E8F0">);</text>
+    <rect x="460" y="100" width="5" height="180" rx="3" fill="#2D2F4A"/>
+    <rect x="460" y="120" width="5" height="60"  rx="3" fill="#F97316" opacity="0.5"/>
+    <rect x="152" y="276" width="316" height="4" rx="2" fill="#1A1B2E"/>
+    <circle cx="174" cy="276" r="3" fill="#34D399">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="184" y="279" font-family="'Courier New',monospace" font-size="6" fill="#6B7280">JavaScript  UTF-8  Ln 7, Col 28</text>
+    <text x="388" y="279" font-family="'Courier New',monospace" font-size="6" fill="#34D399">✓ No errors</text>
+  </g>
+
+  <!-- BOTTOM: TERMINAL CARD -->
+  <g class="grp-term" filter="url(#softShadow)">
+    <rect x="152" y="295" width="316" height="82" rx="12" fill="url(#termBg)"/>
+    <rect x="152" y="295" width="316" height="22" rx="12" fill="#161B22"/>
+    <rect x="152" y="306" width="316" height="11" fill="#161B22"/>
+    <circle cx="170" cy="306" r="4" fill="#FF5F57"/>
+    <circle cx="184" cy="306" r="4" fill="#FFBD2E"/>
+    <circle cx="198" cy="306" r="4" fill="#28C840"/>
+    <text x="310" y="310" font-family="'Courier New',monospace" font-size="8" fill="#6B7280" text-anchor="middle">Terminal</text>
+    <text x="168" y="328" font-family="'Courier New',monospace" font-size="8.5" fill="#34D399">$</text>
+    <text x="178" y="328" font-family="'Courier New',monospace" font-size="8.5" fill="#E2E8F0">npm run build</text>
+    <text x="168" y="342" font-family="'Courier New',monospace" font-size="8.5" fill="#6B7280">▶  Building for production...</text>
+    <text x="168" y="356" font-family="'Courier New',monospace" font-size="8.5" fill="#34D399">✓ Built in 1.42s</text>
+    <text x="168" y="370" font-family="'Courier New',monospace" font-size="8.5" fill="#34D399">$</text>
+    <text x="178" y="370" font-family="'Courier New',monospace" font-size="8.5" fill="#E2E8F0">
+      <animate attributeName="opacity" values="0;0;1;1" dur="5s" repeatCount="indefinite"/>
+      npm run deploy
+    </text>
+    <rect x="178" y="361" width="1.5" height="10" fill="#34D399">
+      <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- CONNECTOR LINES -->
+  <path d="M 222,190 Q 165,195 130,232" fill="none" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.28"/>
+  <path d="M 310,295 L 310,320"          fill="none" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.28"/>
+  <path d="M 398,190 Q 455,192 490,225"  fill="none" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.28"/>
+  <path d="M 250,68  Q 200,55 148,44"    fill="none" stroke="#F97316" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.2"/>
+  <path d="M 370,68  Q 420,55 470,44"    fill="none" stroke="#F97316" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.2"/>
+
+  <!-- DATA PACKETS -->
+  <circle r="4" fill="#F97316">
+    <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"><mpath href="#pWeb"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="0s"/>
+  </circle>
+  <circle r="3.5" fill="#34D399">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1.4s"><mpath href="#pMobile"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" begin="1.4s"/>
+  </circle>
+  <circle r="4" fill="#60A5FA">
+    <animateMotion dur="2.6s" repeatCount="indefinite" begin="0.7s"><mpath href="#pAPI"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.6s" repeatCount="indefinite" begin="0.7s"/>
+  </circle>
+
+  <!-- LEFT CARD: Web & Mobile Apps -->
+  <g class="grp-web" filter="url(#softShadow)">
+    <rect x="18" y="170" width="130" height="130" rx="16" fill="url(#cardWhite)"/>
+    <rect x="18" y="170" width="130" height="130" rx="16" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <rect x="30" y="183" width="56" height="40" rx="5" fill="#1A1B2E"/>
+    <rect x="30" y="183" width="56" height="12" rx="5" fill="#252641"/>
+    <rect x="30" y="188" width="56" height="7"  fill="#252641"/>
+    <circle cx="37" cy="189" r="2.5" fill="#FF5F57"/>
+    <circle cx="45" cy="189" r="2.5" fill="#FFBD2E"/>
+    <circle cx="53" cy="189" r="2.5" fill="#28C840"/>
+    <rect x="59" y="186" width="22" height="6" rx="2" fill="#2D2F4A"/>
+    <rect x="33" y="198" width="28" height="3" rx="1" fill="#F97316" opacity="0.7"/>
+    <rect x="33" y="204" width="20" height="2" rx="1" fill="#9CA3AF" opacity="0.4"/>
+    <rect x="33" y="209" width="24" height="2" rx="1" fill="#9CA3AF" opacity="0.3"/>
+    <rect x="33" y="214" width="18" height="2" rx="1" fill="#9CA3AF" opacity="0.25"/>
+    <rect x="55" y="196" width="22" height="36" rx="4" fill="#111827"/>
+    <rect x="57" y="201" width="18" height="28" rx="2" fill="#0F1729"/>
+    <rect x="59" y="204" width="14" height="3" rx="1" fill="#F97316" opacity="0.8"/>
+    <rect x="59" y="209" width="10" height="2" rx="1" fill="white" opacity="0.2"/>
+    <rect x="59" y="213" width="12" height="2" rx="1" fill="white" opacity="0.15"/>
+    <rect x="59" y="217" width="8"  height="6" rx="1" fill="#F97316" opacity="0.3"/>
+    <circle cx="66" cy="200" r="1.2" fill="#374151"/>
+    <circle cx="34" cy="213" r="3" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="74" y="188" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Web &amp;</text>
+    <text x="74" y="200" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Mobile</text>
+    <text x="74" y="213" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#9CA3AF">Apps</text>
+    <rect x="30" y="238" width="40" height="13" rx="5" fill="#FFF7ED"/>
+    <text x="50"  y="248" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700" text-anchor="middle">React</text>
+    <rect x="76" y="238" width="40" height="13" rx="5" fill="#FFF7ED"/>
+    <text x="96"  y="248" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700" text-anchor="middle">Vue</text>
+    <rect x="30" y="256" width="50" height="13" rx="5" fill="#F0FDF4"/>
+    <text x="55"  y="266" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#059669" font-weight="700" text-anchor="middle">Flutter</text>
+    <rect x="86" y="256" width="50" height="13" rx="5" fill="#EFF6FF"/>
+    <text x="111" y="266" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#2563EB" font-weight="700" text-anchor="middle">React Native</text>
+    <rect x="30" y="278" width="96" height="5" rx="2.5" fill="#F3F4F6"/>
+    <rect x="30" y="278" width="78" height="5" rx="2.5" fill="url(#progressGrad)">
+      <animate attributeName="width" values="0;78;78;0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="74" y="290" font-family="'Segoe UI',system-ui,sans-serif" font-size="7" fill="#9CA3AF" text-anchor="middle">Responsive by default</text>
+  </g>
+
+  <!-- BOTTOM-CENTER CARD: Integrations -->
+  <g class="grp-mobile" filter="url(#softShadow)">
+    <rect x="230" y="328" width="160" height="60" rx="14" fill="url(#cardWhite)"/>
+    <rect x="230" y="328" width="160" height="60" rx="14" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <circle cx="266" cy="358" r="10" fill="#FFF7ED" stroke="#F97316" stroke-width="1.2" opacity="0.9"/>
+    <text x="266" y="362" font-family="'Courier New',monospace" font-size="9" fill="#F97316" text-anchor="middle" font-weight="900">&lt;/&gt;</text>
+    <circle cx="280" cy="358" r="3.5" fill="#34D399" transform-origin="266 358">
+      <animateTransform attributeName="transform" type="rotate" from="0 266 358" to="360 266 358" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="266" cy="344" r="3" fill="#60A5FA" transform-origin="266 358">
+      <animateTransform attributeName="transform" type="rotate" from="120 266 358" to="480 266 358" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="256" cy="368" r="3" fill="#C084FC" transform-origin="266 358">
+      <animateTransform attributeName="transform" type="rotate" from="240 266 358" to="600 266 358" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="308" y="350" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">3rd-Party</text>
+    <text x="308" y="362" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Integrations</text>
+    <text x="308" y="374" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">Stripe · Slack · Twilio</text>
+  </g>
+
+  <!-- RIGHT CARD: API Development -->
+  <g class="grp-api" filter="url(#softShadow)">
+    <rect x="472" y="170" width="130" height="130" rx="16" fill="url(#cardWhite)"/>
+    <rect x="472" y="170" width="130" height="130" rx="16" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <rect x="484" y="183" width="56" height="88" rx="6" fill="#1A1B2E"/>
+    <rect x="484" y="183" width="56" height="16" rx="6" fill="#252641"/>
+    <rect x="484" y="191" width="56" height="8"  fill="#252641"/>
+    <text x="512" y="194" font-family="'Courier New',monospace" font-size="6.5" fill="#9CA3AF" text-anchor="middle">API</text>
+    <rect x="487" y="202" width="16" height="7" rx="2" fill="#34D399" opacity="0.9"/>
+    <text x="495" y="208" font-family="'Courier New',monospace" font-size="5.5" fill="#0F1729" text-anchor="middle" font-weight="700">GET</text>
+    <rect x="506" y="203" width="30" height="5" rx="1" fill="#2D2F4A"/>
+    <rect x="506" y="203" width="20" height="5" rx="1" fill="#34D399" opacity="0.3">
+      <animate attributeName="width" values="0;20;20;0" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="487" y="213" width="20" height="7" rx="2" fill="#FB923C" opacity="0.9"/>
+    <text x="497" y="219" font-family="'Courier New',monospace" font-size="5.5" fill="#0F1729" text-anchor="middle" font-weight="700">POST</text>
+    <rect x="510" y="214" width="30" height="5" rx="1" fill="#2D2F4A"/>
+    <rect x="510" y="214" width="15" height="5" rx="1" fill="#FB923C" opacity="0.3">
+      <animate attributeName="width" values="0;15;15;0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect x="487" y="224" width="16" height="7" rx="2" fill="#60A5FA" opacity="0.9"/>
+    <text x="495" y="230" font-family="'Courier New',monospace" font-size="5.5" fill="#0F1729" text-anchor="middle" font-weight="700">PUT</text>
+    <rect x="506" y="225" width="30" height="5" rx="1" fill="#2D2F4A"/>
+    <rect x="506" y="225" width="22" height="5" rx="1" fill="#60A5FA" opacity="0.3">
+      <animate attributeName="width" values="0;22;22;0" dur="2.8s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="487" y="235" width="22" height="7" rx="2" fill="#F87171" opacity="0.9"/>
+    <text x="498" y="241" font-family="'Courier New',monospace" font-size="5.5" fill="#0F1729" text-anchor="middle" font-weight="700">DELETE</text>
+    <rect x="512" y="236" width="24" height="5" rx="1" fill="#2D2F4A"/>
+    <rect x="512" y="236" width="10" height="5" rx="1" fill="#F87171" opacity="0.3">
+      <animate attributeName="width" values="0;10;10;0" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <rect x="487" y="247" width="50" height="20" rx="3" fill="#0D1117"/>
+    <text x="490" y="255" font-family="'Courier New',monospace" font-size="5.5" fill="#C084FC">{ </text>
+    <text x="498" y="255" font-family="'Courier New',monospace" font-size="5.5" fill="#34D399">"status"</text>
+    <text x="490" y="263" font-family="'Courier New',monospace" font-size="5.5" fill="#FDBA74">  200 OK</text>
+    <text x="548" y="188" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">API</text>
+    <text x="548" y="200" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Dev</text>
+    <text x="548" y="215" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">REST</text>
+    <text x="548" y="227" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">GraphQL</text>
+    <text x="548" y="239" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">WebSocket</text>
+    <rect x="484" y="272" width="108" height="14" rx="5" fill="#F97316" opacity="0.1"/>
+    <circle cx="496" cy="279" r="3" fill="#F97316">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="537" y="283" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700" text-anchor="middle">Live documentation</text>
+  </g>
+
+  <!-- TOP BADGES -->
+  <g class="grp-web" filter="url(#smallShadow)">
+    <rect x="28" y="22" width="112" height="36" rx="10" fill="url(#cardWhite)"/>
+    <rect x="28" y="22" width="112" height="36" rx="10" fill="none" stroke="#F97316" stroke-width="0.7" opacity="0.2"/>
+    <rect x="40" y="31" width="18" height="18" rx="4" fill="#3178C6"/>
+    <text x="49" y="43" font-family="'Courier New',monospace" font-size="8" font-weight="900" fill="white" text-anchor="middle">TS</text>
+    <text x="92" y="37" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" font-weight="700" fill="#374151" text-anchor="middle">TypeScript</text>
+    <text x="92" y="50" font-family="'Segoe UI',system-ui,sans-serif" font-size="7" fill="#9CA3AF" text-anchor="middle">Type-safe code</text>
+  </g>
+  <g class="grp-api" filter="url(#smallShadow)">
+    <rect x="480" y="22" width="112" height="36" rx="10" fill="url(#cardWhite)"/>
+    <rect x="480" y="22" width="112" height="36" rx="10" fill="none" stroke="#F97316" stroke-width="0.7" opacity="0.2"/>
+    <rect x="492" y="31" width="18" height="18" rx="4" fill="url(#orangeGrad)"/>
+    <text x="501" y="43" font-family="'Segoe UI',system-ui,sans-serif" font-size="10" fill="white" text-anchor="middle">⚙</text>
+    <text x="544" y="37" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" font-weight="700" fill="#374151" text-anchor="middle">CI / CD</text>
+    <text x="544" y="50" font-family="'Segoe UI',system-ui,sans-serif" font-size="7" fill="#9CA3AF" text-anchor="middle">Auto deploys</text>
+  </g>
+  <g class="grp-editor" filter="url(#smallShadow)">
+    <rect x="220" y="14" width="180" height="36" rx="10" fill="url(#orangeGrad)"/>
+    <circle cx="238" cy="32" r="7" fill="white" opacity="0.15"/>
+    <text x="238" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="320" y="28" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="white" text-anchor="middle">Ongoing Support</text>
+    <text x="320" y="42" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="white" opacity="0.85" text-anchor="middle">Dedicated team · SLA guaranteed</text>
+  </g>
+
+  <!-- STAT STRIP -->
+  <g filter="url(#smallShadow)">
+    <rect x="28" y="376" width="564" height="20" rx="8" fill="white" opacity="0.88"/>
+    <rect x="28" y="376" width="564" height="20" rx="8" fill="none" stroke="#F97316" stroke-width="0.5" opacity="0.15"/>
+  </g>
+  <text x="141" y="390" font-family="'Segoe UI',system-ui,sans-serif" font-size="9.5" font-weight="800" fill="#F97316" text-anchor="middle">Web &amp; Mobile Apps</text>
+  <line x1="254" y1="380" x2="254" y2="394" stroke="#F97316" stroke-width="0.7" opacity="0.2"/>
+  <text x="366" y="390" font-family="'Segoe UI',system-ui,sans-serif" font-size="9.5" font-weight="800" fill="#F97316" text-anchor="middle">API Development</text>
+  <line x1="478" y1="380" x2="478" y2="394" stroke="#F97316" stroke-width="0.7" opacity="0.2"/>
+  <text x="521" y="390" font-family="'Segoe UI',system-ui,sans-serif" font-size="9.5" font-weight="800" fill="#F97316" text-anchor="middle">Integrations</text>
+
+</svg>

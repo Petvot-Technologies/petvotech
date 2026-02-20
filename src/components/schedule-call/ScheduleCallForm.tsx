@@ -120,20 +120,34 @@ export function ScheduleCallForm({ onSuccess, onCancel }: ScheduleCallFormProps)
         options={formatOptions}
         {...register("format")}
       />
-      <Input
-        label="Preferred Date"
-        type="date"
-        required
-        error={errors.preferredDate?.message}
-        {...register("preferredDate")}
+      <Controller
+        name="preferredDate"
+        control={control}
+        render={({ field }) => (
+          <DatePicker
+            label="Preferred Date"
+            required
+            value={field.value}
+            onChange={field.onChange}
+            error={errors.preferredDate?.message}
+            placeholder="Pick a date"
+          />
+        )}
       />
       <div className="grid gap-4 sm:grid-cols-2">
-        <Select
-          label="Preferred Time"
-          required
-          options={timeOptions}
-          error={errors.preferredTime?.message}
-          {...register("preferredTime")}
+        <Controller
+          name="preferredTime"
+          control={control}
+          render={({ field }) => (
+            <TimePicker
+              label="Preferred Time"
+              required
+              value={field.value}
+              onChange={field.onChange}
+              error={errors.preferredTime?.message}
+              placeholder="Select time"
+            />
+          )}
         />
         <Select
           label="Timezone"

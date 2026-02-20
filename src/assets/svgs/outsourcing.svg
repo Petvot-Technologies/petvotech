@@ -1,0 +1,321 @@
+<svg width="660" height="460" viewBox="0 0 660 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2F0EC"/>
+      <stop offset="100%" stop-color="#E8E4DE"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="4%" y2="100%">
+      <stop offset="0%" stop-color="#191B2D"/>
+      <stop offset="100%" stop-color="#0D0F1C"/>
+    </linearGradient>
+    <linearGradient id="darkInner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C1E30"/>
+      <stop offset="100%" stop-color="#111323"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="white" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FAF8F5"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#6EE7B7"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="barOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+
+    <!-- Avatar gradients -->
+    <linearGradient id="av1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="av2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="av3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="av4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <linearGradient id="av5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00000022"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4"  flood-color="#00000010"/>
+    </filter>
+    <filter id="shadowXs" x="-8%" y="-8%" width="116%" height="132%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000012"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="660" height="460" rx="18" fill="url(#bg)"/>
+
+  <!-- Dot grid -->
+  <g fill="#ADA69C" opacity="0.3">
+    <circle cx="40" cy="40" r="1"/><circle cx="80" cy="40" r="1"/><circle cx="120" cy="40" r="1"/><circle cx="160" cy="40" r="1"/><circle cx="200" cy="40" r="1"/><circle cx="240" cy="40" r="1"/><circle cx="280" cy="40" r="1"/><circle cx="320" cy="40" r="1"/><circle cx="360" cy="40" r="1"/><circle cx="400" cy="40" r="1"/><circle cx="440" cy="40" r="1"/><circle cx="480" cy="40" r="1"/><circle cx="520" cy="40" r="1"/><circle cx="560" cy="40" r="1"/><circle cx="600" cy="40" r="1"/><circle cx="640" cy="40" r="1"/>
+    <circle cx="40" cy="80" r="1"/><circle cx="80" cy="80" r="1"/><circle cx="120" cy="80" r="1"/><circle cx="160" cy="80" r="1"/><circle cx="200" cy="80" r="1"/><circle cx="240" cy="80" r="1"/><circle cx="280" cy="80" r="1"/><circle cx="320" cy="80" r="1"/><circle cx="360" cy="80" r="1"/><circle cx="400" cy="80" r="1"/><circle cx="440" cy="80" r="1"/><circle cx="480" cy="80" r="1"/><circle cx="520" cy="80" r="1"/><circle cx="560" cy="80" r="1"/><circle cx="600" cy="80" r="1"/><circle cx="640" cy="80" r="1"/>
+    <circle cx="40" cy="120" r="1"/><circle cx="80" cy="120" r="1"/><circle cx="120" cy="120" r="1"/><circle cx="160" cy="120" r="1"/><circle cx="200" cy="120" r="1"/><circle cx="240" cy="120" r="1"/><circle cx="280" cy="120" r="1"/><circle cx="320" cy="120" r="1"/><circle cx="360" cy="120" r="1"/><circle cx="400" cy="120" r="1"/><circle cx="440" cy="120" r="1"/><circle cx="480" cy="120" r="1"/><circle cx="520" cy="120" r="1"/><circle cx="560" cy="120" r="1"/><circle cx="600" cy="120" r="1"/><circle cx="640" cy="120" r="1"/>
+    <circle cx="40" cy="160" r="1"/><circle cx="80" cy="160" r="1"/><circle cx="120" cy="160" r="1"/><circle cx="160" cy="160" r="1"/><circle cx="200" cy="160" r="1"/><circle cx="240" cy="160" r="1"/><circle cx="280" cy="160" r="1"/><circle cx="320" cy="160" r="1"/><circle cx="360" cy="160" r="1"/><circle cx="400" cy="160" r="1"/><circle cx="440" cy="160" r="1"/><circle cx="480" cy="160" r="1"/><circle cx="520" cy="160" r="1"/><circle cx="560" cy="160" r="1"/><circle cx="600" cy="160" r="1"/><circle cx="640" cy="160" r="1"/>
+    <circle cx="40" cy="200" r="1"/><circle cx="80" cy="200" r="1"/><circle cx="120" cy="200" r="1"/><circle cx="160" cy="200" r="1"/><circle cx="200" cy="200" r="1"/><circle cx="240" cy="200" r="1"/><circle cx="280" cy="200" r="1"/><circle cx="320" cy="200" r="1"/><circle cx="360" cy="200" r="1"/><circle cx="400" cy="200" r="1"/><circle cx="440" cy="200" r="1"/><circle cx="480" cy="200" r="1"/><circle cx="520" cy="200" r="1"/><circle cx="560" cy="200" r="1"/><circle cx="600" cy="200" r="1"/><circle cx="640" cy="200" r="1"/>
+    <circle cx="40" cy="240" r="1"/><circle cx="80" cy="240" r="1"/><circle cx="120" cy="240" r="1"/><circle cx="160" cy="240" r="1"/><circle cx="200" cy="240" r="1"/><circle cx="240" cy="240" r="1"/><circle cx="280" cy="240" r="1"/><circle cx="320" cy="240" r="1"/><circle cx="360" cy="240" r="1"/><circle cx="400" cy="240" r="1"/><circle cx="440" cy="240" r="1"/><circle cx="480" cy="240" r="1"/><circle cx="520" cy="240" r="1"/><circle cx="560" cy="240" r="1"/><circle cx="600" cy="240" r="1"/><circle cx="640" cy="240" r="1"/>
+    <circle cx="40" cy="280" r="1"/><circle cx="80" cy="280" r="1"/><circle cx="120" cy="280" r="1"/><circle cx="160" cy="280" r="1"/><circle cx="200" cy="280" r="1"/><circle cx="240" cy="280" r="1"/><circle cx="280" cy="280" r="1"/><circle cx="320" cy="280" r="1"/><circle cx="360" cy="280" r="1"/><circle cx="400" cy="280" r="1"/><circle cx="440" cy="280" r="1"/><circle cx="480" cy="280" r="1"/><circle cx="520" cy="280" r="1"/><circle cx="560" cy="280" r="1"/><circle cx="600" cy="280" r="1"/><circle cx="640" cy="280" r="1"/>
+    <circle cx="40" cy="320" r="1"/><circle cx="80" cy="320" r="1"/><circle cx="120" cy="320" r="1"/><circle cx="160" cy="320" r="1"/><circle cx="200" cy="320" r="1"/><circle cx="240" cy="320" r="1"/><circle cx="280" cy="320" r="1"/><circle cx="320" cy="320" r="1"/><circle cx="360" cy="320" r="1"/><circle cx="400" cy="320" r="1"/><circle cx="440" cy="320" r="1"/><circle cx="480" cy="320" r="1"/><circle cx="520" cy="320" r="1"/><circle cx="560" cy="320" r="1"/><circle cx="600" cy="320" r="1"/><circle cx="640" cy="320" r="1"/>
+    <circle cx="40" cy="360" r="1"/><circle cx="80" cy="360" r="1"/><circle cx="120" cy="360" r="1"/><circle cx="160" cy="360" r="1"/><circle cx="200" cy="360" r="1"/><circle cx="240" cy="360" r="1"/><circle cx="280" cy="360" r="1"/><circle cx="320" cy="360" r="1"/><circle cx="360" cy="360" r="1"/><circle cx="400" cy="360" r="1"/><circle cx="440" cy="360" r="1"/><circle cx="480" cy="360" r="1"/><circle cx="520" cy="360" r="1"/><circle cx="560" cy="360" r="1"/><circle cx="600" cy="360" r="1"/><circle cx="640" cy="360" r="1"/>
+    <circle cx="40" cy="400" r="1"/><circle cx="80" cy="400" r="1"/><circle cx="120" cy="400" r="1"/><circle cx="160" cy="400" r="1"/><circle cx="200" cy="400" r="1"/><circle cx="240" cy="400" r="1"/><circle cx="280" cy="400" r="1"/><circle cx="320" cy="400" r="1"/><circle cx="360" cy="400" r="1"/><circle cx="400" cy="400" r="1"/><circle cx="440" cy="400" r="1"/><circle cx="480" cy="400" r="1"/><circle cx="520" cy="400" r="1"/><circle cx="560" cy="400" r="1"/><circle cx="600" cy="400" r="1"/><circle cx="640" cy="400" r="1"/>
+    <circle cx="40" cy="440" r="1"/><circle cx="80" cy="440" r="1"/><circle cx="120" cy="440" r="1"/><circle cx="160" cy="440" r="1"/><circle cx="200" cy="440" r="1"/><circle cx="240" cy="440" r="1"/><circle cx="280" cy="440" r="1"/><circle cx="320" cy="440" r="1"/><circle cx="360" cy="440" r="1"/><circle cx="400" cy="440" r="1"/><circle cx="440" cy="440" r="1"/><circle cx="480" cy="440" r="1"/><circle cx="520" cy="440" r="1"/><circle cx="560" cy="440" r="1"/><circle cx="600" cy="440" r="1"/><circle cx="640" cy="440" r="1"/>
+  </g>
+
+  <!-- Warm orange glow -->
+  <circle cx="330" cy="230" r="160" fill="#F97316" opacity="0.04"/>
+
+
+  <!-- ═══════════════════════════════════════════
+       TOP: TEAM ROSTER — full width dark card
+  ═══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="22" y="22" width="616" height="168" rx="16" fill="url(#dark)"/>
+    <rect x="22" y="22" width="5"   height="168" rx="3" fill="url(#orange)"/>
+
+    <text x="44" y="50" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="700" fill="white">Your Extended Team</text>
+
+    <!-- Online badge -->
+    <rect x="190" y="36" width="84" height="20" rx="10" fill="#F97316" opacity="0.18"/>
+    <circle cx="202" cy="46" r="4" fill="#22C55E"/>
+    <text x="238" y="50" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#22C55E" text-anchor="middle" font-weight="700">5 Active Now</text>
+
+    <!-- ── Chidi Okafor — Full-Stack Dev ── -->
+    <rect x="42" y="64" width="108" height="108" rx="12" fill="url(#darkInner)"/>
+    <circle cx="72"  cy="92"  r="18" fill="url(#av1)"/>
+    <circle cx="72"  cy="86"  r="7"  fill="white" opacity="0.9"/>
+    <path   d="M57,108 Q72,99 87,108" fill="white" opacity="0.7"/>
+    <circle cx="86" cy="76" r="5" fill="url(#darkInner)"/>
+    <circle cx="86" cy="76" r="3" fill="#22C55E"/>
+    <text x="72" y="120" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="white"   text-anchor="middle" font-weight="700">Chidi O.</text>
+    <text x="72" y="132" font-family="'Segoe UI',system-ui,sans-serif" font-size="7"   fill="#9CA3AF" text-anchor="middle">Full-Stack Dev</text>
+    <rect x="46" y="140" width="32" height="12" rx="6" fill="#F97316" opacity="0.2"/>
+    <text x="62" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#FB923C" text-anchor="middle">React</text>
+    <rect x="82" y="140" width="28" height="12" rx="6" fill="#F97316" opacity="0.2"/>
+    <text x="96" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#FB923C" text-anchor="middle">Node</text>
+    <rect x="46" y="155" width="54" height="10" rx="5" fill="#22C55E" opacity="0.15"/>
+    <text x="73" y="163" font-family="'Segoe UI',system-ui,sans-serif" font-size="6"   fill="#22C55E" text-anchor="middle" font-weight="700">✓ Vetted</text>
+
+    <!-- ── Amaka Eze — DevOps Engineer ── -->
+    <rect x="158" y="64" width="108" height="108" rx="12" fill="url(#darkInner)"/>
+    <circle cx="188" cy="92"  r="18" fill="url(#av2)"/>
+    <circle cx="188" cy="86"  r="7"  fill="white" opacity="0.9"/>
+    <path   d="M173,108 Q188,99 203,108" fill="white" opacity="0.7"/>
+    <circle cx="202" cy="76" r="5" fill="url(#darkInner)"/>
+    <circle cx="202" cy="76" r="3" fill="#22C55E"/>
+    <text x="188" y="120" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="white"   text-anchor="middle" font-weight="700">Amaka E.</text>
+    <text x="188" y="132" font-family="'Segoe UI',system-ui,sans-serif" font-size="7"   fill="#9CA3AF" text-anchor="middle">DevOps Engineer</text>
+    <rect x="162" y="140" width="34" height="12" rx="6" fill="#34D399" opacity="0.2"/>
+    <text x="179" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#34D399" text-anchor="middle">Docker</text>
+    <rect x="200" y="140" width="28" height="12" rx="6" fill="#34D399" opacity="0.2"/>
+    <text x="214" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#34D399" text-anchor="middle">AWS</text>
+    <rect x="162" y="155" width="54" height="10" rx="5" fill="#22C55E" opacity="0.15"/>
+    <text x="189" y="163" font-family="'Segoe UI',system-ui,sans-serif" font-size="6"   fill="#22C55E" text-anchor="middle" font-weight="700">✓ Vetted</text>
+
+    <!-- ── Emeka Nwosu — Solution Architect ── -->
+    <rect x="274" y="64" width="108" height="108" rx="12" fill="url(#darkInner)"/>
+    <circle cx="304" cy="92"  r="18" fill="url(#av3)"/>
+    <circle cx="304" cy="86"  r="7"  fill="white" opacity="0.9"/>
+    <path   d="M289,108 Q304,99 319,108" fill="white" opacity="0.7"/>
+    <circle cx="318" cy="76" r="5" fill="url(#darkInner)"/>
+    <circle cx="318" cy="76" r="3" fill="#22C55E"/>
+    <text x="304" y="120" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="white"   text-anchor="middle" font-weight="700">Emeka N.</text>
+    <text x="304" y="132" font-family="'Segoe UI',system-ui,sans-serif" font-size="7"   fill="#9CA3AF" text-anchor="middle">Solution Architect</text>
+    <rect x="278" y="140" width="32" height="12" rx="6" fill="#60A5FA" opacity="0.2"/>
+    <text x="294" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#60A5FA" text-anchor="middle">Azure</text>
+    <rect x="314" y="140" width="28" height="12" rx="6" fill="#60A5FA" opacity="0.2"/>
+    <text x="328" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#60A5FA" text-anchor="middle">GCP</text>
+    <rect x="278" y="155" width="54" height="10" rx="5" fill="#22C55E" opacity="0.15"/>
+    <text x="305" y="163" font-family="'Segoe UI',system-ui,sans-serif" font-size="6"   fill="#22C55E" text-anchor="middle" font-weight="700">✓ Vetted</text>
+
+    <!-- ── Ngozi Adeyemi — UI/UX Designer ── -->
+    <rect x="390" y="64" width="108" height="108" rx="12" fill="url(#darkInner)"/>
+    <circle cx="420" cy="92"  r="18" fill="url(#av4)"/>
+    <circle cx="420" cy="86"  r="7"  fill="white" opacity="0.9"/>
+    <path   d="M405,108 Q420,99 435,108" fill="white" opacity="0.7"/>
+    <circle cx="434" cy="76" r="5" fill="url(#darkInner)"/>
+    <circle cx="434" cy="76" r="3" fill="#FDBA74"/>
+    <text x="420" y="120" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="white"   text-anchor="middle" font-weight="700">Ngozi A.</text>
+    <text x="420" y="132" font-family="'Segoe UI',system-ui,sans-serif" font-size="7"   fill="#9CA3AF" text-anchor="middle">UI/UX Designer</text>
+    <rect x="394" y="140" width="32" height="12" rx="6" fill="#FDBA74" opacity="0.25"/>
+    <text x="410" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#FDBA74" text-anchor="middle">Figma</text>
+    <rect x="430" y="140" width="30" height="12" rx="6" fill="#FDBA74" opacity="0.25"/>
+    <text x="445" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#FDBA74" text-anchor="middle">Tailwind</text>
+    <rect x="394" y="155" width="54" height="10" rx="5" fill="#22C55E" opacity="0.15"/>
+    <text x="421" y="163" font-family="'Segoe UI',system-ui,sans-serif" font-size="6"   fill="#22C55E" text-anchor="middle" font-weight="700">✓ Vetted</text>
+
+    <!-- ── Tunde Balogun — Data Engineer ── -->
+    <rect x="506" y="64" width="108" height="108" rx="12" fill="url(#darkInner)"/>
+    <circle cx="536" cy="92"  r="18" fill="url(#av5)"/>
+    <circle cx="536" cy="86"  r="7"  fill="white" opacity="0.9"/>
+    <path   d="M521,108 Q536,99 551,108" fill="white" opacity="0.7"/>
+    <circle cx="550" cy="76" r="5" fill="url(#darkInner)"/>
+    <circle cx="550" cy="76" r="3" fill="#22C55E"/>
+    <text x="536" y="120" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="white"   text-anchor="middle" font-weight="700">Tunde B.</text>
+    <text x="536" y="132" font-family="'Segoe UI',system-ui,sans-serif" font-size="7"   fill="#9CA3AF" text-anchor="middle">Data Engineer</text>
+    <rect x="510" y="140" width="36" height="12" rx="6" fill="#F472B6" opacity="0.2"/>
+    <text x="528" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#F472B6" text-anchor="middle">Python</text>
+    <rect x="550" y="140" width="28" height="12" rx="6" fill="#F472B6" opacity="0.2"/>
+    <text x="564" y="150" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#F472B6" text-anchor="middle">Spark</text>
+    <rect x="510" y="155" width="54" height="10" rx="5" fill="#22C55E" opacity="0.15"/>
+    <text x="537" y="163" font-family="'Segoe UI',system-ui,sans-serif" font-size="6"   fill="#22C55E" text-anchor="middle" font-weight="700">✓ Vetted</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM-LEFT: ENGAGEMENT MODELS
+  ═══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="22" y="208" width="196" height="230" rx="16" fill="url(#white)"/>
+    <rect x="22" y="208" width="196" height="230" rx="16" fill="none" stroke="#EDE8E2" stroke-width="1"/>
+    <rect x="22" y="208" width="196" height="4"   rx="2" fill="url(#orange)"/>
+
+    <text x="38" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" font-weight="700" fill="#111827">Engagement Models</text>
+
+    <!-- Part-time -->
+    <rect x="32" y="244" width="172" height="46" rx="10" fill="#FFF7ED"/>
+    <rect x="32" y="244" width="4"   height="46" rx="2" fill="url(#orange)"/>
+    <text x="44" y="260" font-family="'Segoe UI',system-ui,sans-serif" font-size="9"   fill="#111827" font-weight="700">Part-Time</text>
+    <text x="44" y="272" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#6B7280">20 hrs/week · Flexible schedule</text>
+    <rect x="162" y="250" width="36" height="14" rx="7" fill="url(#orange)"/>
+    <text x="180" y="261" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="white" text-anchor="middle" font-weight="700">Popular</text>
+
+    <!-- Full-time -->
+    <rect x="32" y="298" width="172" height="46" rx="10" fill="#F0FDF4"/>
+    <rect x="32" y="298" width="4"   height="46" rx="2" fill="url(#green)"/>
+    <text x="44" y="314" font-family="'Segoe UI',system-ui,sans-serif" font-size="9"   fill="#111827" font-weight="700">Full-Time</text>
+    <text x="44" y="326" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#6B7280">40 hrs/week · Dedicated resource</text>
+
+    <!-- Project-based -->
+    <rect x="32" y="352" width="172" height="46" rx="10" fill="#EFF6FF"/>
+    <rect x="32" y="352" width="4"   height="46" rx="2" fill="url(#blue)"/>
+    <text x="44" y="368" font-family="'Segoe UI',system-ui,sans-serif" font-size="9"   fill="#111827" font-weight="700">Project-Based</text>
+    <text x="44" y="380" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#6B7280">Fixed scope · Fixed delivery</text>
+
+    <!-- Onboarding bar -->
+    <text x="38" y="415" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#6B7280" font-weight="600">Avg. onboarding time</text>
+    <rect x="38" y="421" width="162" height="6" rx="3" fill="#F3F0EA"/>
+    <rect x="38" y="421" width="48"  height="6" rx="3" fill="url(#barOrange)"/>
+    <text x="92" y="436" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#F97316" font-weight="700">3 days</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM-CENTER: SKILLS
+  ═══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="232" y="208" width="196" height="230" rx="16" fill="url(#dark)"/>
+    <rect x="232" y="208" width="196" height="4"   rx="2" fill="url(#orange)"/>
+
+    <text x="248" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" font-weight="700" fill="white">Top Skills</text>
+    <rect x="344" y="222" width="68" height="18" rx="9" fill="#F97316" opacity="0.18"/>
+    <text x="378" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#FB923C" text-anchor="middle" font-weight="700">50+ Experts</text>
+
+    <text x="248" y="258" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#E2E8F0">Frontend Dev</text>
+    <rect x="248" y="263" width="152" height="5" rx="2.5" fill="#2D3050"/>
+    <rect x="248" y="263" width="136" height="5" rx="2.5" fill="url(#barOrange)"/>
+    <text x="406" y="269" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#FB923C" font-weight="700">90%</text>
+
+    <text x="248" y="285" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#E2E8F0">Backend Dev</text>
+    <rect x="248" y="290" width="152" height="5" rx="2.5" fill="#2D3050"/>
+    <rect x="248" y="290" width="128" height="5" rx="2.5" fill="url(#barOrange)"/>
+    <text x="406" y="296" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#FB923C" font-weight="700">85%</text>
+
+    <text x="248" y="312" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#E2E8F0">DevOps / Cloud</text>
+    <rect x="248" y="317" width="152" height="5" rx="2.5" fill="#2D3050"/>
+    <rect x="248" y="317" width="114" height="5" rx="2.5" fill="url(#green)"/>
+    <text x="406" y="323" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#34D399" font-weight="700">75%</text>
+
+    <text x="248" y="339" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#E2E8F0">Mobile (iOS/Android)</text>
+    <rect x="248" y="344" width="152" height="5" rx="2.5" fill="#2D3050"/>
+    <rect x="248" y="344" width="106" height="5" rx="2.5" fill="url(#green)"/>
+    <text x="406" y="350" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#34D399" font-weight="700">70%</text>
+
+    <text x="248" y="366" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#E2E8F0">Data Engineering</text>
+    <rect x="248" y="371" width="152" height="5" rx="2.5" fill="#2D3050"/>
+    <rect x="248" y="371" width="91"  height="5" rx="2.5" fill="url(#blue)"/>
+    <text x="406" y="377" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#60A5FA" font-weight="700">60%</text>
+
+    <text x="248" y="393" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#E2E8F0">UI/UX Design</text>
+    <rect x="248" y="398" width="152" height="5" rx="2.5" fill="#2D3050"/>
+    <rect x="248" y="398" width="83"  height="5" rx="2.5" fill="url(#blue)"/>
+    <text x="406" y="404" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#60A5FA" font-weight="700">55%</text>
+
+    <!-- Tech pills -->
+    <rect x="248" y="418" width="36" height="14" rx="7" fill="#1C1E30" stroke="#2D3050" stroke-width="1"/>
+    <text x="266" y="429" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#9CA3AF" text-anchor="middle">React</text>
+    <rect x="290" y="418" width="42" height="14" rx="7" fill="#1C1E30" stroke="#2D3050" stroke-width="1"/>
+    <text x="311" y="429" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#9CA3AF" text-anchor="middle">Node.js</text>
+    <rect x="338" y="418" width="30" height="14" rx="7" fill="#1C1E30" stroke="#2D3050" stroke-width="1"/>
+    <text x="353" y="429" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#9CA3AF" text-anchor="middle">AWS</text>
+    <rect x="374" y="418" width="40" height="14" rx="7" fill="#1C1E30" stroke="#2D3050" stroke-width="1"/>
+    <text x="394" y="429" font-family="'Segoe UI',system-ui,sans-serif" font-size="6.5" fill="#9CA3AF" text-anchor="middle">Python</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM-RIGHT: MANAGED DELIVERY
+  ═══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="442" y="208" width="196" height="230" rx="16" fill="url(#white)"/>
+    <rect x="442" y="208" width="196" height="230" rx="16" fill="none" stroke="#EDE8E2" stroke-width="1"/>
+    <rect x="442" y="208" width="196" height="4"   rx="2" fill="url(#orange)"/>
+
+    <text x="458" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" font-weight="700" fill="#111827">Managed Delivery</text>
+
+    <!-- Sprint progress -->
+    <rect x="452" y="244" width="176" height="50" rx="10" fill="#FFF7ED"/>
+    <text x="462" y="259" font-family="'Segoe UI',system-ui,sans-serif" font-size="8"   fill="#6B7280">Sprint 3 · In Progress</text>
+    <rect x="462" y="265" width="130" height="6" rx="3" fill="#F3F0EA"/>
+    <rect x="462" y="265" width="98"  height="6" rx="3" fill="url(#barOrange)"/>
+    <text x="596" y="272" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#F97316" font-weight="700">75%</text>
+    <text x="462" y="286" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">3 days remaining · 12 tasks done</text>
+
+    <!-- Delivery timeline -->
+    <line x1="468" y1="304" x2="468" y2="412" stroke="#EDE8E2" stroke-width="1.5"/>
+
+    <circle cx="468" cy="310" r="7" fill="#F97316"/>
+    <text   x="468" y="314" font-family="'Segoe UI',system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">✓</text>
+    <text   x="484" y="308" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#111827" font-weight="700">Kick-off &amp; Discovery</text>
+    <text   x="484" y="319" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">Completed · Day 1</text>
+
+    <circle cx="468" cy="342" r="7" fill="#F97316"/>
+    <text   x="468" y="346" font-family="'Segoe UI',system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">✓</text>
+    <text   x="484" y="340" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#111827" font-weight="700">Onboarding &amp; Setup</text>
+    <text   x="484" y="351" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">Completed · Day 3</text>
+
+    <circle cx="468" cy="374" r="7" fill="#1C1E30" stroke="#34D399" stroke-width="2"/>
+    <circle cx="468" cy="374" r="3.5" fill="#34D399"/>
+    <text   x="484" y="372" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#111827" font-weight="700">Active Development</text>
+    <text   x="484" y="383" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316">In progress · Week 2</text>
+
+    <circle cx="468" cy="406" r="7" fill="#F3F0EA" stroke="#E5E7EB" stroke-width="1.5"/>
+    <text   x="484" y="404" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#9CA3AF" font-weight="700">Review &amp; Handoff</text>
+    <text   x="484" y="415" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF">Upcoming · Week 4</text>
+
+    <!-- Satisfaction score -->
+    <rect x="452" y="422" width="176" height="12" rx="6" fill="#FFF7ED"/>
+    <text x="462" y="432" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700">⭐ 4.9/5  Client Satisfaction Score</text>
+  </g>
+
+</svg>

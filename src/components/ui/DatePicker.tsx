@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Calendar } from "lucide-react";
+import { createPortal } from "react-dom";
+import { Calendar, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function formatDisplayDate(value: string): string {
@@ -58,6 +59,8 @@ export function DatePicker({
   placeholder = "Pick a date",
 }: DatePickerProps) {
   const [open, setOpen] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0, width: 0 });
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const [view, setView] = useState(() => {
     if (value) {
       const [y, m] = value.split("-").map(Number);
@@ -75,6 +78,17 @@ export function DatePicker({
       setView({ year: y, month: m - 1 });
     }
   }, [open, value]);
+
+  useEffect(() => {
+    if (open && triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      setPosition({
+        top: rect.bottom + 4,
+        left: rect.left,
+        width: rect.width,
+      });
+    }
+  }, [open]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -115,6 +129,7 @@ export function DatePicker({
         </label>
       )}
       <button
+        ref={triggerRef}
         type="button"
         id={inputId}
         onClick={() => setOpen((o) => !o)}
@@ -134,13 +149,23 @@ export function DatePicker({
         <span className={value ? "text-neutral-900" : "text-neutral-400"}>
           {value ? formatDisplayDate(value) : placeholder}
         </span>
+        <ChevronDown className="ml-auto h-5 w-5 shrink-0 text-neutral-400" />
       </button>
-      {open && (
-        <div
-          role="dialog"
-          aria-label="Choose date"
-          className="absolute z-50 mt-1 w-full min-w-[280px] rounded-xl border border-neutral-200 bg-white p-4 shadow-xl"
-        >
+      {open &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-label="Choose date"
+            style={{
+              position: "fixed",
+              top: position.top,
+              left: position.left,
+              width: Math.max(280, position.width),
+              zIndex: 1500,
+            }}
+            className="rounded-xl border border-neutral-200 bg-white p-4 shadow-xl"
+          >
           <div className="mb-3 flex items-center justify-between">
             <button
               type="button"
@@ -194,8 +219,9 @@ export function DatePicker({
               );
             })}
           </div>
-        </div>
-      )}
+        </div>,
+          document.body
+        )}
       {error && (
         <p role="alert" className="text-sm text-error">
           {error}

@@ -1,10 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { Check, Workflow, Cloud, Code2, Users, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { AnimatedSection } from "@/components/AnimatedSection";
+
+import automationSvg from "@/assets/svgs/automation.svg";
+import cloudSvg from "@/assets/svgs/cloud.svg";
+import softwareSvg from "@/assets/svgs/software.svg";
+import consultancySvg from "@/assets/svgs/consultancy.svg";
+import outsourcingSvg from "@/assets/svgs/outsourcing.svg";
 
 const services = [
   {
@@ -20,6 +26,7 @@ const services = [
       "Staff training included",
     ],
     icon: Workflow,
+    image: automationSvg,
     imageLeft: true,
   },
   {
@@ -35,6 +42,7 @@ const services = [
       "24/7 monitoring",
     ],
     icon: Cloud,
+    image: cloudSvg,
     imageLeft: false,
   },
   {
@@ -50,6 +58,7 @@ const services = [
       "Ongoing support",
     ],
     icon: Code2,
+    image: softwareSvg,
     imageLeft: true,
   },
   {
@@ -65,6 +74,7 @@ const services = [
       "Managed delivery",
     ],
     icon: Users,
+    image: outsourcingSvg,
     imageLeft: false,
   },
   {
@@ -80,6 +90,7 @@ const services = [
       "Architecture review",
     ],
     icon: Lightbulb,
+    image: consultancySvg,
     imageLeft: true,
   },
 ];
@@ -91,6 +102,7 @@ function ServiceBlock({
   description,
   features,
   icon: Icon,
+  image,
   imageLeft,
   index,
 }: (typeof services)[0] & { index: number }) {
@@ -103,8 +115,18 @@ function ServiceBlock({
     >
       <div className="flex-1">
         <div className="relative aspect-video overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Icon className="h-24 w-24 text-neutral-300" />
+          <div className="absolute inset-0 flex items-center justify-center p-6">
+            {image ? (
+              <Image
+                src={image}
+                alt=""
+                className="h-full w-full object-contain"
+                width={400}
+                height={225}
+              />
+            ) : (
+              <Icon className="h-24 w-24 text-neutral-300" />
+            )}
           </div>
         </div>
       </div>

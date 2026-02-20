@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteLoader } from "@/components/layout/SiteLoader";
 import { OrganizationSchema } from "@/components/StructuredData";
 import { Providers } from "@/components/Providers";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -71,6 +73,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${inter.variable}`}
     >
       <body className="min-h-screen bg-neutral-0 font-body">
+        <SiteLoader />
         <OrganizationSchema />
         <a href="#main-content" className="skip-link sr-only focus:not-sr-only focus:z-[1600]">
           Skip to main content
@@ -80,6 +83,14 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
       </Providers>
+        <Script id="zoho-salesiq-init" strategy="lazyOnload">
+          {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
+        </Script>
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siq91a72b5bf2625d4a3642ef733ecaecf8a0153d48c3dba4b639e387130faad6d9"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

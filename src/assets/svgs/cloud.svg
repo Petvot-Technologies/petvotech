@@ -1,0 +1,392 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <!-- Cloud gradient - realistic white/grey -->
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0EFED"/>
+    </linearGradient>
+
+    <!-- Cloud shadow underneath -->
+    <radialGradient id="cloudShadow" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Node card gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FDF8F5"/>
+    </linearGradient>
+
+    <!-- Orange card gradient -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA6000"/>
+    </linearGradient>
+
+    <!-- Dark card gradient -->
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F1F1F"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+
+    <!-- Glow filter for cloud -->
+    <filter id="cloudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Drop shadow for cards -->
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#00000018"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000010"/>
+    </filter>
+
+    <!-- Orange glow filter -->
+    <filter id="orangeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Soft blur for ambient glow circles -->
+    <filter id="ambientBlur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <style>
+      /* Data packet traveling along lines */
+      @keyframes travelDown1 {
+        0%   { offset-distance: 0%;   opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
+      @keyframes travelDown2 {
+        0%   { offset-distance: 0%;   opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
+      @keyframes travelUp {
+        0%   { offset-distance: 100%; opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { offset-distance: 0%;   opacity: 0; }
+      }
+
+      /* Pulse rings on cloud center */
+      @keyframes pulseRing {
+        0%   { r: 55; opacity: 0.35; }
+        100% { r: 95; opacity: 0; }
+      }
+      @keyframes pulseRing2 {
+        0%   { r: 55; opacity: 0.25; }
+        100% { r: 95; opacity: 0; }
+      }
+
+      /* Float cards gently */
+      @keyframes floatA {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-5px); }
+      }
+      @keyframes floatB {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-4px); }
+      }
+      @keyframes floatC {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-6px); }
+      }
+      @keyframes floatCloud {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-7px); }
+      }
+
+      /* Heartbeat line draw */
+      @keyframes heartbeat {
+        0%   { stroke-dashoffset: 300; }
+        60%  { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      /* Blink status dot */
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0.25; }
+      }
+
+      /* Uptime counter shimmer */
+      @keyframes shimmer {
+        0%, 100% { opacity: 0.9; }
+        50%       { opacity: 1; }
+      }
+
+      /* Security shield pulse */
+      @keyframes shieldPulse {
+        0%, 100% { transform: scale(1); }
+        50%       { transform: scale(1.07); }
+      }
+
+      .card-a { animation: floatA 4s ease-in-out infinite; }
+      .card-b { animation: floatB 5s ease-in-out infinite; }
+      .card-c { animation: floatC 4.5s ease-in-out infinite; }
+      .card-d { animation: floatA 6s ease-in-out infinite; }
+      .card-e { animation: floatB 3.8s ease-in-out infinite; }
+      .cloud-group { animation: floatCloud 5s ease-in-out infinite; }
+    </style>
+
+    <!-- Motion paths for data packets -->
+    <!-- Cloud center ~320,192 -->
+    <!-- Card positions: Laptop 109,318 | Mobile 251,328 | Server 531,318 | API 109,98 | Security 531,98 | Monitor 320,52 -->
+
+    <path id="pathToLaptop"   d="M 275,218 Q 200,270 150,310"/>
+    <path id="pathToMobile"   d="M 295,222 Q 278,268 268,318"/>
+    <path id="pathToServer"   d="M 365,218 Q 430,270 490,310"/>
+    <path id="pathToAPI"      d="M 275,168 Q 200,138 148,118"/>
+    <path id="pathToSecurity" d="M 365,168 Q 430,138 492,118"/>
+    <path id="pathToMonitor"  d="M 320,152 L 320,82"/>
+
+  </defs>
+
+  <!-- Ambient glow blobs -->
+  <circle cx="320" cy="195" r="80" fill="#F97316" filter="url(#ambientBlur)" opacity="0.08"/>
+  <circle cx="150" cy="110" r="40" fill="#FB923C" filter="url(#ambientBlur)" opacity="0.06"/>
+  <circle cx="490" cy="110" r="40" fill="#FB923C" filter="url(#ambientBlur)" opacity="0.06"/>
+
+  <!-- Cloud shadow ellipse -->
+  <ellipse cx="320" cy="230" rx="140" ry="18" fill="url(#cloudShadow)"/>
+
+  <!-- CONNECTOR LINES (dashed, drawn first so nodes sit on top) -->
+  <!-- To Laptop -->
+  <path d="M 275,218 Q 200,270 150,310" fill="none" stroke="#F97316" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.3"/>
+  <!-- To Mobile -->
+  <path d="M 295,222 Q 278,268 268,318" fill="none" stroke="#F97316" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.3"/>
+  <!-- To Server -->
+  <path d="M 365,218 Q 430,270 490,310" fill="none" stroke="#F97316" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.3"/>
+  <!-- To API -->
+  <path d="M 275,168 Q 200,138 148,118" fill="none" stroke="#F97316" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.3"/>
+  <!-- To Security -->
+  <path d="M 365,168 Q 430,138 492,118" fill="none" stroke="#F97316" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.3"/>
+  <!-- To Monitor -->
+  <line x1="320" y1="152" x2="320" y2="82" stroke="#F97316" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.3"/>
+
+  <!-- DATA PACKETS animating along paths -->
+  <!-- Packet down to Laptop -->
+  <circle r="4" fill="#F97316" opacity="0.9">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
+      <mpath href="#pathToLaptop"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" begin="0s"/>
+  </circle>
+  <!-- Packet up from Mobile -->
+  <circle r="3.5" fill="#FB923C" opacity="0.9">
+    <animateMotion dur="3.5s" repeatCount="indefinite" begin="1.2s" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+      <mpath href="#pathToMobile"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.5s" repeatCount="indefinite" begin="1.2s"/>
+  </circle>
+  <!-- Packet down to Server -->
+  <circle r="4" fill="#F97316" opacity="0.9">
+    <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.6s">
+      <mpath href="#pathToServer"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+  <!-- Packet up from API -->
+  <circle r="3.5" fill="#FDBA74" opacity="0.9">
+    <animateMotion dur="3.2s" repeatCount="indefinite" begin="0.4s" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+      <mpath href="#pathToAPI"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.2s" repeatCount="indefinite" begin="0.4s"/>
+  </circle>
+  <!-- Packet down to Security -->
+  <circle r="4" fill="#F97316" opacity="0.9">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1.8s">
+      <mpath href="#pathToSecurity"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" begin="1.8s"/>
+  </circle>
+  <!-- Packet up to Monitor -->
+  <circle r="3.5" fill="#FB923C" opacity="0.9">
+    <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.9s" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+      <mpath href="#pathToMonitor"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0.9s"/>
+  </circle>
+
+  <!-- PULSE RINGS from cloud center -->
+  <circle cx="320" cy="192" fill="none" stroke="#F97316" stroke-width="1.5">
+    <animate attributeName="r" values="55;100" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="320" cy="192" fill="none" stroke="#F97316" stroke-width="1">
+    <animate attributeName="r" values="55;100" dur="2.5s" repeatCount="indefinite" begin="1.25s"/>
+    <animate attributeName="opacity" values="0.2;0" dur="2.5s" repeatCount="indefinite" begin="1.25s"/>
+  </circle>
+
+  <!-- MAIN CLOUD (realistic, floating) -->
+  <g class="cloud-group">
+    <!-- Cloud soft glow behind -->
+    <ellipse cx="320" cy="192" rx="118" ry="58" fill="#F97316" filter="url(#ambientBlur)" opacity="0.07"/>
+    <!-- Cloud shape - realistic layered circles approach -->
+    <!-- Back bumps -->
+    <circle cx="258" cy="198" r="44" fill="#F0EFED"/>
+    <circle cx="310" cy="178" r="52" fill="#F0EFED"/>
+    <circle cx="366" cy="192" r="44" fill="#F0EFED"/>
+    <!-- Main base rectangle fill -->
+    <rect x="222" y="196" width="200" height="36" fill="#F0EFED"/>
+    <!-- White top layer -->
+    <circle cx="262" cy="194" r="40" fill="url(#cloudGrad)"/>
+    <circle cx="314" cy="172" r="48" fill="url(#cloudGrad)"/>
+    <circle cx="370" cy="188" r="40" fill="url(#cloudGrad)"/>
+    <rect x="226" y="192" width="192" height="40" fill="url(#cloudGrad)"/>
+    <!-- Bottom smooth edge -->
+    <rect x="226" y="222" width="192" height="10" rx="5" fill="url(#cloudGrad)"/>
+    <!-- Cloud highlight -->
+    <ellipse cx="300" cy="175" rx="36" ry="12" fill="white" opacity="0.6"/>
+    <!-- Subtle border -->
+    <path d="M226,232 L418,232 Q418,232 418,220 Q418,188 380,186 Q388,148 358,142 Q344,122 318,128 Q306,112 282,116 Q258,112 248,132 Q224,134 222,158 Q208,162 208,180 Q208,200 226,202 Z"
+      fill="none" stroke="#E8E4E0" stroke-width="1"/>
+
+    <!-- Cloud label -->
+    <text x="320" y="200" font-family="'Segoe UI',system-ui,sans-serif" font-size="10" font-weight="700" fill="#F97316" text-anchor="middle" opacity="0.9">Cloud Infrastructure</text>
+
+    <!-- Uptime badge -->
+    <rect x="274" y="207" width="92" height="20" rx="8" fill="url(#orangeGrad)"/>
+    <text x="320" y="221" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" font-weight="800" fill="white" text-anchor="middle">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="2s" repeatCount="indefinite"/>
+      99.9% Uptime
+    </text>
+  </g>
+
+  <!-- TOP NODE: 24/7 Monitoring (top-center) -->
+  <g class="card-d" filter="url(#cardShadow)">
+    <rect x="245" y="16" width="150" height="62" rx="14" fill="url(#darkGrad)"/>
+    <!-- Heartbeat line -->
+    <polyline points="258,44 268,44 274,32 282,56 288,38 296,44 316,44 322,44 328,36 336,52 342,44 354,44 368,44 378,44 388,44"
+      fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" values="300;0;0;300" dur="3s" repeatCount="indefinite"/>
+    </polyline>
+    <text x="320" y="66" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="white" opacity="0.9" text-anchor="middle">24 / 7 Monitoring</text>
+    <!-- Blinking status dot -->
+    <circle cx="258" cy="66" r="3.5" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- TOP-LEFT NODE: Infra as Code -->
+  <g class="card-a" filter="url(#cardShadow)">
+    <rect x="30" y="60" width="148" height="76" rx="14" fill="url(#cardGrad)"/>
+    <rect x="30" y="60" width="148" height="76" rx="14" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <!-- Code icon -->
+    <rect x="46" y="76" width="40" height="28" rx="6" fill="#FFF7ED"/>
+    <text x="66" y="97" font-family="'Courier New',monospace" font-size="14" font-weight="900" fill="#F97316" text-anchor="middle">&lt;/&gt;</text>
+    <text x="96" y="82" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Infra as Code</text>
+    <text x="96" y="95" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#9CA3AF">Terraform</text>
+    <text x="96" y="107" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#9CA3AF">Ansible</text>
+    <rect x="46" y="118" width="122" height="13" rx="4" fill="#F97316" opacity="0.1"/>
+    <text x="107" y="128" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700" text-anchor="middle">Version controlled</text>
+  </g>
+
+  <!-- TOP-RIGHT NODE: Security -->
+  <g class="card-b" filter="url(#cardShadow)">
+    <rect x="472" y="60" width="138" height="76" rx="14" fill="url(#orangeGrad)"/>
+    <!-- Shield -->
+    <g transform-origin="510px 88px">
+      <path d="M495,74 L515,68 L535,74 L535,92 Q535,106 515,114 Q495,106 495,92 Z" fill="white" opacity="0.2"/>
+      <path d="M498,76 L515,71 L532,76 L532,91 Q532,103 515,110 Q498,103 498,91 Z" fill="white" opacity="0.9"/>
+      <polyline points="507,91 512,97 524,83" stroke="#F97316" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <animate attributeName="transform" type="scale" values="1;1.06;1" dur="2s" repeatCount="indefinite"/>
+    </g>
+    <text x="545" y="84" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="white">Security &amp;</text>
+    <text x="545" y="97" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="white">Compliance</text>
+    <rect x="482" y="112" width="108" height="14" rx="4" fill="white" opacity="0.15"/>
+    <text x="536" y="123" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="white" font-weight="700" text-anchor="middle">SOC2 · GDPR ready</text>
+  </g>
+
+  <!-- BOTTOM-LEFT NODE: Laptop -->
+  <g class="card-c" filter="url(#cardShadow)">
+    <rect x="30" y="290" width="138" height="80" rx="14" fill="url(#cardGrad)"/>
+    <rect x="30" y="290" width="138" height="80" rx="14" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <!-- Realistic laptop -->
+    <rect x="46" y="304" width="44" height="30" rx="3" fill="#2D2D2D"/>
+    <rect x="48" y="306" width="40" height="26" rx="2" fill="#1A1A2E"/>
+    <!-- Screen content lines -->
+    <rect x="51" y="309" width="24" height="2.5" rx="1" fill="#F97316" opacity="0.7"/>
+    <rect x="51" y="314" width="18" height="2" rx="1" fill="white" opacity="0.3"/>
+    <rect x="51" y="318" width="20" height="2" rx="1" fill="white" opacity="0.2"/>
+    <rect x="51" y="322" width="16" height="2" rx="1" fill="#FB923C" opacity="0.5"/>
+    <!-- Keyboard base -->
+    <rect x="43" y="334" width="50" height="5" rx="2" fill="#3D3D3D"/>
+    <!-- Screen blink -->
+    <circle cx="81" cy="309" r="2" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="116" y="308" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Desktop /</text>
+    <text x="116" y="321" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Laptop</text>
+    <text x="116" y="336" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#9CA3AF">Any browser</text>
+    <rect x="46" y="352" width="55" height="13" rx="4" fill="#F97316" opacity="0.1"/>
+    <text x="73" y="362" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700" text-anchor="middle">Always accessible</text>
+  </g>
+
+  <!-- BOTTOM-CENTER NODE: Mobile -->
+  <g class="card-a" filter="url(#cardShadow)">
+    <rect x="215" y="310" width="124" height="80" rx="14" fill="url(#cardGrad)"/>
+    <rect x="215" y="310" width="124" height="80" rx="14" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <!-- Realistic phone -->
+    <rect x="232" y="322" width="26" height="46" rx="5" fill="#1A1A1A"/>
+    <rect x="234" y="327" width="22" height="36" rx="2" fill="#0F1729"/>
+    <!-- Phone screen mini content -->
+    <rect x="236" y="330" width="18" height="3" rx="1" fill="#F97316" opacity="0.8"/>
+    <rect x="236" y="336" width="14" height="2" rx="1" fill="white" opacity="0.25"/>
+    <rect x="236" y="340" width="16" height="2" rx="1" fill="white" opacity="0.2"/>
+    <rect x="236" y="344" width="12" height="8" rx="2" fill="#F97316" opacity="0.3"/>
+    <!-- Home indicator -->
+    <rect x="238" y="359" width="12" height="2" rx="1" fill="white" opacity="0.4"/>
+    <!-- Camera dot -->
+    <circle cx="245" cy="325" r="1.5" fill="#333"/>
+    <text x="274" y="328" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="#374151">Mobile</text>
+    <text x="274" y="341" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#9CA3AF">iOS &amp; Android</text>
+    <rect x="232" y="378" width="88" height="4" rx="2" fill="#F97316" opacity="0.12"/>
+    <rect x="232" y="378" width="62" height="4" rx="2" fill="#F97316" opacity="0.6"/>
+    <text x="277" y="387" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#9CA3AF" text-anchor="middle">Syncing...</text>
+  </g>
+
+  <!-- BOTTOM-RIGHT NODE: Server / On-Premise -->
+  <g class="card-b" filter="url(#cardShadow)">
+    <rect x="472" y="290" width="138" height="80" rx="14" fill="url(#darkGrad)"/>
+    <!-- Server rack illustration -->
+    <rect x="488" y="303" width="42" height="10" rx="3" fill="#2A2A2A" stroke="#F97316" stroke-width="0.8" opacity="0.8"/>
+    <rect x="488" y="317" width="42" height="10" rx="3" fill="#2A2A2A" stroke="#F97316" stroke-width="0.8" opacity="0.8"/>
+    <rect x="488" y="331" width="42" height="10" rx="3" fill="#2A2A2A" stroke="#FB923C" stroke-width="0.8" opacity="0.6"/>
+    <!-- Status LEDs -->
+    <circle cx="524" cy="308" r="2" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="524" cy="322" r="2" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <circle cx="524" cy="336" r="2" fill="#F97316">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="546" y="312" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" font-weight="700" fill="white">On-Premise</text>
+    <text x="546" y="325" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#9CA3AF">Legacy server</text>
+    <text x="546" y="338" font-family="'Segoe UI',system-ui,sans-serif" font-size="8" fill="#F97316" opacity="0.9">Migrating...</text>
+    <rect x="488" y="350" width="112" height="13" rx="4" fill="#F97316" opacity="0.18"/>
+    <text x="544" y="361" font-family="'Segoe UI',system-ui,sans-serif" font-size="7.5" fill="#F97316" font-weight="700" text-anchor="middle">Cloud migration active</text>
+  </g>
+
+  <!-- STAT STRIP -->
+  <g filter="url(#cardShadow)">
+    <rect x="40" y="385" width="560" height="30" rx="10" fill="white" opacity="0.88"/>
+    <rect x="40" y="385" width="560" height="30" rx="10" fill="none" stroke="#F97316" stroke-width="0.6" opacity="0.15"/>
+  </g>
+  <text x="140" y="405" font-family="'Segoe UI',system-ui,sans-serif" font-size="10.5" font-weight="800" fill="#F97316" text-anchor="middle">Cloud Migration</text>
+  <line x1="248" y1="390" x2="248" y2="410" stroke="#F97316" stroke-width="0.8" opacity="0.18"/>
+  <text x="352" y="405" font-family="'Segoe UI',system-ui,sans-serif" font-size="10.5" font-weight="800" fill="#F97316" text-anchor="middle">Security &amp; Compliance</text>
+  <line x1="458" y1="390" x2="458" y2="410" stroke="#F97316" stroke-width="0.8" opacity="0.18"/>
+  <text x="548" y="405" font-family="'Segoe UI',system-ui,sans-serif" font-size="10.5" font-weight="800" fill="#F97316" text-anchor="middle">24/7 Monitoring</text>
+
+</svg>

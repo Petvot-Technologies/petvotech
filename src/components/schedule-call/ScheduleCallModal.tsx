@@ -36,7 +36,7 @@ export function ScheduleCallModal({ open, onClose }: ScheduleCallModalProps) {
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="relative z-10 flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl">
+      <div className="relative z-10 flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl sm:max-w-xl md:max-w-2xl md:max-h-[92vh] md:min-h-[min(75vh,700px)] lg:max-w-3xl lg:max-h-[92vh] lg:min-h-[min(80vh,760px)]">
         <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-3">
           <h2
             id="schedule-call-modal-title"
