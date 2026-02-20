@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://www.petvottech.com",
+    url: "https://www.petvotech.com",
     siteName: "Petvot Tech",
     title: "Petvot Tech | Technology That Grows With Your Business",
     description:
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     description: "Enterprise-grade digital solutions without the enterprise complexity",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://www.petvottech.com" },
+  alternates: { canonical: "https://www.petvotech.com" },
 };
 
 export default function RootLayout({
@@ -83,6 +83,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
       </Providers>
+      <SpeedInsights />
         <Script id="zoho-salesiq-init" strategy="lazyOnload">
           {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
         </Script>
