@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
@@ -35,8 +36,18 @@ export function CaseStudyPreview() {
                   padding="none"
                   className="group overflow-hidden transition-all hover:shadow-xl"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center">
-                    <span className="text-sm text-neutral-500">{c.type}</span>
+                  <div className="relative aspect-video overflow-hidden bg-neutral-100">
+                    {c.dashboardImage ? (
+                      <Image
+                        src={c.dashboardImage}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    ) : (
+                      <span className="flex h-full w-full items-center justify-center text-sm text-neutral-500">{c.type}</span>
+                    )}
                   </div>
                   <div className="border-t border-neutral-100 p-6">
                     <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">

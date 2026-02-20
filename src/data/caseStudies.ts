@@ -4,6 +4,8 @@ export interface CaseStudy {
   tagline: string;
   type: string;
   description: string;
+  /** Path to dashboard/project UI image (e.g. in public/case-studies/) */
+  dashboardImage?: string;
   imagePlaceholder?: string;
   challenge: string;
   solution: string;
@@ -17,6 +19,7 @@ export const caseStudies: CaseStudy[] = [
     title: "AI-Powered Enterprise Learning Management System",
     tagline: "Intelligent learning at scale",
     type: "Learning Management System",
+    dashboardImage: "/case-studies/lms-dashboard.png",
     description: "An enterprise-grade LMS that uses AI to personalize learning paths, automate assessments, and deliver measurable training outcomes.",
     challenge:
       "The client needed a modern learning platform that could scale across regions, support multiple content types, and provide actionable insights—without the complexity and cost of legacy enterprise LMS solutions.",
@@ -41,6 +44,7 @@ export const caseStudies: CaseStudy[] = [
     title: "FinStream Automation",
     tagline: "End-to-end finance workflow automation",
     type: "Finance & Automation",
+    dashboardImage: "/case-studies/finstream-dashboard.png",
     description: "A custom automation platform that streamlines financial workflows, reconciliation, and reporting for a growing fintech operation.",
     challenge:
       "Manual, spreadsheet-driven finance processes were slowing growth and increasing error risk. The team needed a single system to automate data flows, reconciliation, and regulatory reporting without replacing core banking systems overnight.",
@@ -65,6 +69,7 @@ export const caseStudies: CaseStudy[] = [
     title: "SaaS Event Booking & Ticketing Platform",
     tagline: "From signup to sold-out events",
     type: "SaaS · Events",
+    dashboardImage: "/case-studies/event-dashboard.png",
     description: "A full-featured SaaS platform for event organizers to create events, sell tickets, manage attendees, and analyze performance.",
     challenge:
       "Event organizers were juggling multiple tools for registration, payments, and attendee management. They needed one platform that could handle everything from free workshops to paid conferences, with flexibility for different event types and pricing models.",

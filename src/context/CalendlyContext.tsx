@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
-import { CalendlyModal } from "@/components/CalendlyModal";
+import { ScheduleCallModal } from "@/components/schedule-call/ScheduleCallModal";
 
 const CalendlyContext = createContext<{ openCalendly: () => void } | null>(null);
 
@@ -13,7 +13,7 @@ export function CalendlyProvider({ children }: { children: ReactNode }) {
   return (
     <CalendlyContext.Provider value={{ openCalendly }}>
       {children}
-      <CalendlyModal open={open} onClose={onClose} />
+      <ScheduleCallModal open={open} onClose={onClose} />
     </CalendlyContext.Provider>
   );
 }

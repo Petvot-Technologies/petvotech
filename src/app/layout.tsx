@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { OrganizationSchema } from "@/components/StructuredData";
 import { Providers } from "@/components/Providers";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({
   subsets: ["latin"],

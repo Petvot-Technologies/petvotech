@@ -1,15 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import vaultlms from "@/assets/trustedby/vaultlms.svg";
+import client2 from "@/assets/trustedby/client2.svg";
 
-const clientNames = [
-  "Client One",
-  "Client Two",
-  "Client Three",
-  "Client Four",
-  "Client Five",
-  "Client Six",
+const clientLogos = [
+  { src: vaultlms, alt: "VaultLMS" },
+  { src: client2, alt: "Client" },
 ];
+
+const LOGO_HEIGHT = 40;
+const LOGO_WIDTH = 160;
 
 export function ClientLogos() {
   return (
@@ -24,14 +26,20 @@ export function ClientLogos() {
           viewport={{ once: true }}
           className="flex flex-wrap items-center justify-center gap-x-16 gap-y-10"
         >
-          {clientNames.map((name, i) => (
+          {clientLogos.map((client, i) => (
             <div
               key={i}
-              className="flex h-12 w-32 items-center justify-center rounded-lg border border-neutral-200 bg-white px-4 py-2 grayscale transition-all duration-300 hover:grayscale-0"
+              className="relative flex h-14 w-40 items-center justify-center rounded-lg border border-neutral-200 bg-white px-4 py-2 grayscale transition-all duration-300 hover:grayscale-0"
             >
-              <span className="text-center font-heading text-xs font-semibold text-neutral-500">
-                {name}
-              </span>
+              <Image
+                src={client.src}
+                alt={client.alt}
+                width={LOGO_WIDTH}
+                height={LOGO_HEIGHT}
+                className="object-contain"
+                style={{ width: "auto", maxWidth: "100%", height: `${LOGO_HEIGHT}px` }}
+                unoptimized
+              />
             </div>
           ))}
         </motion.div>

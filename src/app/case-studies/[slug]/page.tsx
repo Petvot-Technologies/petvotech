@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, Lightbulb, Target } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -66,10 +67,20 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center">
-            <span className="text-neutral-500">
-              {study.imagePlaceholder || `${study.type} — project visual`}
-            </span>
+          <div className="aspect-video w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50">
+            {study.dashboardImage ? (
+              <Image
+                src={study.dashboardImage}
+                alt={`${study.title} — dashboard`}
+                width={800}
+                height={500}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-neutral-500">
+                {study.imagePlaceholder || `${study.type} — project visual`}
+              </div>
+            )}
           </div>
         </div>
       </section>

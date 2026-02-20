@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { caseStudies } from "@/data/caseStudies";
@@ -43,10 +44,20 @@ export default function CaseStudiesPage() {
                   padding="none"
                   className="group overflow-hidden transition-all hover:shadow-xl"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center">
-                    <span className="text-sm text-neutral-500">
-                      {c.imagePlaceholder || c.type}
-                    </span>
+                  <div className="relative aspect-video overflow-hidden bg-neutral-100">
+                    {c.dashboardImage ? (
+                      <Image
+                        src={c.dashboardImage}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <span className="flex h-full w-full items-center justify-center text-sm text-neutral-500">
+                        {c.imagePlaceholder || c.type}
+                      </span>
+                    )}
                   </div>
                   <div className="border-t border-neutral-100 p-6">
                     <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">

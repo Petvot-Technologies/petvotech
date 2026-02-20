@@ -1,0 +1,269 @@
+<svg width="700" height="600" viewBox="0 0 700 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm white background matching site -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF7ED"/>
+      <stop offset="100%" stop-color="#FEF3E8"/>
+    </linearGradient>
+
+    <!-- Central hub glow -->
+    <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ambient center warmth -->
+    <radialGradient id="warmCenter" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FDBA74" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softBlur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#F9731620"/>
+    </filter>
+    <filter id="miniShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#00000014"/>
+    </filter>
+
+    <style>
+      @keyframes hubPulse {
+        0%, 100% { r: 55; opacity: 0.18; }
+        50% { r: 80; opacity: 0.32; }
+      }
+      @keyframes nodePulse1 {
+        0%, 100% { r: 22; opacity: 0.15; }
+        50% { r: 32; opacity: 0.28; }
+      }
+      @keyframes float1 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+      @keyframes float3 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+    </style>
+  </defs>
+
+  <!-- ===== BACKGROUND — matches site warm white ===== -->
+  <rect width="700" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Warm ambient glow -->
+  <ellipse cx="350" cy="290" rx="260" ry="220" fill="url(#warmCenter)"/>
+
+  <!-- Subtle dot grid -->
+  <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="16" cy="16" r="1.3" fill="#F97316" opacity="0.1"/>
+  </pattern>
+  <rect width="700" height="600" fill="url(#dotGrid)"/>
+
+  <!-- ===== NETWORK LINES — Hub at 350, 290 ===== -->
+
+  <!-- Hub → Finance (top-left) 110, 90 -->
+  <line x1="350" y1="290" x2="110" y2="90" stroke="#F97316" stroke-width="1.6" stroke-dasharray="7 5" opacity="0.3">
+    <animate attributeName="stroke-dashoffset" from="220" to="0" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <!-- Hub → Healthcare (top-right) 570, 80 -->
+  <line x1="350" y1="290" x2="570" y2="80" stroke="#F97316" stroke-width="1.6" stroke-dasharray="7 5" opacity="0.28">
+    <animate attributeName="stroke-dashoffset" from="0" to="220" dur="5s" repeatCount="indefinite"/>
+  </line>
+  <!-- Hub → E-commerce (right) 650, 290 -->
+  <line x1="350" y1="290" x2="650" y2="290" stroke="#F97316" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.28">
+    <animate attributeName="stroke-dashoffset" from="220" to="0" dur="3.8s" repeatCount="indefinite"/>
+  </line>
+  <!-- Hub → Real Estate (bottom-right) 560, 490 -->
+  <line x1="350" y1="290" x2="560" y2="490" stroke="#F97316" stroke-width="1.4" stroke-dasharray="7 5" opacity="0.26">
+    <animate attributeName="stroke-dashoffset" from="0" to="220" dur="6s" repeatCount="indefinite"/>
+  </line>
+  <!-- Hub → Education (bottom-left) 140, 490 -->
+  <line x1="350" y1="290" x2="140" y2="490" stroke="#F97316" stroke-width="1.4" stroke-dasharray="7 5" opacity="0.26">
+    <animate attributeName="stroke-dashoffset" from="220" to="0" dur="5.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- Hub → Analytics (left) 50, 290 -->
+  <line x1="350" y1="290" x2="50" y2="290" stroke="#F97316" stroke-width="1.4" stroke-dasharray="6 5" opacity="0.26">
+    <animate attributeName="stroke-dashoffset" from="0" to="220" dur="4.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- Hub → Automation (bottom-center) 350, 530 -->
+  <line x1="350" y1="290" x2="350" y2="530" stroke="#F97316" stroke-width="1.4" stroke-dasharray="6 5" opacity="0.24">
+    <animate attributeName="stroke-dashoffset" from="220" to="0" dur="4.8s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Cross-links between outer nodes -->
+  <line x1="110" y1="90" x2="570" y2="80" stroke="#FDBA74" stroke-width="0.7" opacity="0.14"/>
+  <line x1="570" y1="80" x2="650" y2="290" stroke="#FDBA74" stroke-width="0.7" opacity="0.13"/>
+  <line x1="650" y1="290" x2="560" y2="490" stroke="#FDBA74" stroke-width="0.7" opacity="0.13"/>
+  <line x1="560" y1="490" x2="350" y2="530" stroke="#FDBA74" stroke-width="0.7" opacity="0.12"/>
+  <line x1="350" y1="530" x2="140" y2="490" stroke="#FDBA74" stroke-width="0.7" opacity="0.12"/>
+  <line x1="140" y1="490" x2="50" y2="290" stroke="#FDBA74" stroke-width="0.7" opacity="0.13"/>
+  <line x1="50" y1="290" x2="110" y2="90" stroke="#FDBA74" stroke-width="0.7" opacity="0.14"/>
+
+  <!-- ===== NODE GLOWS ===== -->
+  <circle cx="350" cy="290" r="70" fill="url(#hubGlow)" filter="url(#softBlur)">
+    <animate attributeName="r" values="55;80;55" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="110" cy="90" r="26" fill="#F97316" filter="url(#softBlur)" opacity="0.18">
+    <animate attributeName="r" values="20;30;20" dur="4.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="570" cy="80" r="26" fill="#FB923C" filter="url(#softBlur)" opacity="0.18">
+    <animate attributeName="r" values="20;30;20" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="650" cy="290" r="24" fill="#F97316" filter="url(#softBlur)" opacity="0.16">
+    <animate attributeName="r" values="18;28;18" dur="3.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="560" cy="490" r="24" fill="#FB923C" filter="url(#softBlur)" opacity="0.16">
+    <animate attributeName="r" values="18;28;18" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="530" r="22" fill="#F97316" filter="url(#softBlur)" opacity="0.15">
+    <animate attributeName="r" values="16;26;16" dur="4.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="490" r="24" fill="#F97316" filter="url(#softBlur)" opacity="0.16">
+    <animate attributeName="r" values="18;28;18" dur="5.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="50" cy="290" r="22" fill="#FB923C" filter="url(#softBlur)" opacity="0.16">
+    <animate attributeName="r" values="16;26;16" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== ORBIT RINGS ===== -->
+  <circle cx="350" cy="290" r="72" stroke="#F97316" stroke-width="1" fill="none" stroke-dasharray="3 9" opacity="0.18"/>
+  <circle cx="350" cy="290" r="115" stroke="#FB923C" stroke-width="0.7" fill="none" stroke-dasharray="2 11" opacity="0.12"/>
+  <circle cx="350" cy="290" r="165" stroke="#FDBA74" stroke-width="0.5" fill="none" stroke-dasharray="2 14" opacity="0.08"/>
+
+  <!-- Orbiting dots -->
+  <circle cx="422" cy="290" r="4" fill="#F97316" opacity="0.75" transform-origin="350px 290px">
+    <animateTransform attributeName="transform" type="rotate" from="0 350 290" to="360 350 290" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="175" r="3" fill="#FB923C" opacity="0.65" transform-origin="350px 290px">
+    <animateTransform attributeName="transform" type="rotate" from="120 350 290" to="480 350 290" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="405" r="3" fill="#FDBA74" opacity="0.6" transform-origin="350px 290px">
+    <animateTransform attributeName="transform" type="rotate" from="240 350 290" to="600 350 290" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== MAIN NODE DOTS ===== -->
+  <!-- Central Hub -->
+  <circle cx="350" cy="290" r="20" fill="#F97316" opacity="0.12"/>
+  <circle cx="350" cy="290" r="13" fill="#F97316" opacity="0.25"/>
+  <circle cx="350" cy="290" r="8" fill="#F97316"/>
+  <circle cx="350" cy="290" r="3.5" fill="#FFFFFF"/>
+
+  <!-- Outer sector nodes -->
+  <circle cx="110" cy="90" r="10" fill="#F97316"/>
+  <circle cx="110" cy="90" r="5" fill="#FFF7ED"/>
+
+  <circle cx="570" cy="80" r="10" fill="#FB923C"/>
+  <circle cx="570" cy="80" r="5" fill="#FFF7ED"/>
+
+  <circle cx="650" cy="290" r="9" fill="#F97316"/>
+  <circle cx="650" cy="290" r="4.5" fill="#FFF7ED"/>
+
+  <circle cx="560" cy="490" r="9" fill="#FB923C"/>
+  <circle cx="560" cy="490" r="4.5" fill="#FFF7ED"/>
+
+  <circle cx="350" cy="530" r="9" fill="#F97316"/>
+  <circle cx="350" cy="530" r="4.5" fill="#FFF7ED"/>
+
+  <circle cx="140" cy="490" r="9" fill="#F97316"/>
+  <circle cx="140" cy="490" r="4.5" fill="#FFF7ED"/>
+
+  <circle cx="50" cy="290" r="8" fill="#FB923C"/>
+  <circle cx="50" cy="290" r="4" fill="#FFF7ED"/>
+
+  <!-- Tiny scatter nodes -->
+  <circle cx="230" cy="55" r="5" fill="#FDBA74" opacity="0.7"/>
+  <circle cx="460" cy="42" r="4.5" fill="#FB923C" opacity="0.65"/>
+  <circle cx="665" cy="170" r="4" fill="#F97316" opacity="0.6"/>
+  <circle cx="640" cy="420" r="4" fill="#FDBA74" opacity="0.55"/>
+  <circle cx="80" cy="420" r="4" fill="#FB923C" opacity="0.55"/>
+  <circle cx="42" cy="155" r="3.5" fill="#F97316" opacity="0.5"/>
+  <circle cx="350" cy="30" r="4" fill="#FDBA74" opacity="0.5"/>
+
+  <!-- Lines to scatter nodes -->
+  <line x1="230" y1="55" x2="110" y2="90" stroke="#FDBA74" stroke-width="0.6" opacity="0.2"/>
+  <line x1="460" y1="42" x2="570" y2="80" stroke="#FDBA74" stroke-width="0.6" opacity="0.18"/>
+  <line x1="665" y1="170" x2="650" y2="290" stroke="#FDBA74" stroke-width="0.6" opacity="0.16"/>
+  <line x1="640" y1="420" x2="560" y2="490" stroke="#FDBA74" stroke-width="0.6" opacity="0.15"/>
+  <line x1="80" y1="420" x2="140" y2="490" stroke="#FDBA74" stroke-width="0.6" opacity="0.15"/>
+  <line x1="42" y1="155" x2="50" y2="290" stroke="#FDBA74" stroke-width="0.5" opacity="0.14"/>
+  <line x1="350" y1="30" x2="350" y2="290" stroke="#FDBA74" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- ===== SECTOR LABELS ===== -->
+  <g font-family="'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#F97316" opacity="0.8" letter-spacing="0.2">
+    <text x="110" y="72" text-anchor="middle">Finance</text>
+    <text x="570" y="62" text-anchor="middle">Healthcare</text>
+    <text x="658" y="308" text-anchor="end" font-size="10">E-commerce</text>
+    <text x="562" y="514" text-anchor="middle">Education</text>
+    <text x="350" y="556" text-anchor="middle">Automation</text>
+    <text x="138" y="514" text-anchor="middle">Real Estate</text>
+    <text x="48" y="290" text-anchor="middle" font-size="10">Analytics</text>
+  </g>
+
+  <!-- ===== GROWTH TREND LINE ===== -->
+  <g opacity="0.2">
+    <polyline points="200,400 240,370 290,345 340,315 395,285 450,255 500,225 545,198" stroke="#F97316" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="420" stroke-dashoffset="420">
+      <animate attributeName="stroke-dashoffset" from="420" to="0" dur="3.5s" repeatCount="indefinite"/>
+    </polyline>
+    <polygon points="545,198 530,200 535,212" fill="#F97316" opacity="0.7"/>
+  </g>
+
+  <!-- ===== FLOATING METRIC CARDS ===== -->
+
+  <!-- Card 1: Revenue — top right area -->
+  <g style="animation: float1 4s ease-in-out infinite;" filter="url(#miniShadow)">
+    <rect x="480" y="140" width="130" height="72" rx="12" fill="white" opacity="0.96"/>
+    <rect x="480" y="140" width="130" height="72" rx="12" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.25"/>
+    <circle cx="496" cy="158" r="6" fill="#F97316" opacity="0.9"/>
+    <text x="507" y="162" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#374151">Revenue Growth</text>
+    <text x="490" y="184" font-family="'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="900" fill="#F97316">+38%</text>
+    <polyline points="575,196 585,185 595,190 605,174" stroke="#F97316" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="605" cy="174" r="3" fill="#F97316" opacity="0.8"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Card 2: Clients — left side -->
+  <g filter="url(#miniShadow)">
+    <rect x="80" y="210" width="136" height="76" rx="12" fill="white" opacity="0.96"/>
+    <rect x="80" y="210" width="136" height="76" rx="12" fill="none" stroke="#FB923C" stroke-width="0.8" opacity="0.25"/>
+    <circle cx="97" cy="229" r="6" fill="#FB923C" opacity="0.9"/>
+    <text x="108" y="233" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#374151">Businesses Served</text>
+    <text x="90" y="258" font-family="'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="900" fill="#F97316">50+</text>
+    <!-- Avatar dots -->
+    <circle cx="148" cy="252" r="6" fill="#FDBA74"/>
+    <circle cx="160" cy="252" r="6" fill="#FB923C"/>
+    <circle cx="172" cy="252" r="6" fill="#F97316"/>
+    <circle cx="184" cy="252" r="6" fill="#FDBA74"/>
+    <text x="148" y="275" font-family="'Segoe UI', system-ui, sans-serif" font-size="8.5" fill="#9CA3AF">and growing...</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="5.5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Card 3: Uptime — bottom center-right -->
+  <g filter="url(#miniShadow)">
+    <rect x="410" y="370" width="130" height="70" rx="12" fill="white" opacity="0.96"/>
+    <rect x="410" y="370" width="130" height="70" rx="12" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.22"/>
+    <circle cx="427" cy="388" r="6" fill="#F97316" opacity="0.9"/>
+    <text x="438" y="392" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#374151">System Uptime</text>
+    <text x="420" y="418" font-family="'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="900" fill="#F97316">99.9%</text>
+    <circle cx="522" cy="400" r="7" fill="#F97316" opacity="0.15">
+      <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="522" cy="400" r="4.5" fill="#F97316"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="6s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Card 4: Experience badge — top center -->
+  <g filter="url(#miniShadow)">
+    <rect x="270" y="22" width="160" height="56" rx="12" fill="white" opacity="0.95"/>
+    <rect x="270" y="22" width="160" height="56" rx="12" fill="none" stroke="#F97316" stroke-width="0.8" opacity="0.2"/>
+    <text x="350" y="47" font-family="'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="900" fill="#F97316" text-anchor="middle">5 Years</text>
+    <text x="350" y="65" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle" letter-spacing="0.8">COMBINED EXPERIENCE</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="7s" repeatCount="indefinite"/>
+  </g>
+
+</svg>

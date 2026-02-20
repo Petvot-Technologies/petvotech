@@ -18,8 +18,8 @@ export function Hero() {
       <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
       <div className="absolute bottom-1/4 left-0 h-72 w-72 rounded-full bg-cream/40 blur-3xl" />
 
-      <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center gap-12 px-4 pt-20 pb-16 lg:flex-row lg:items-center lg:gap-16 lg:px-8">
-        <div className="flex-1 space-y-8 text-center lg:text-left">
+      <div className="relative mx-auto flex min-h-[90vh] max-w-4xl flex-col items-center justify-center px-4 pt-20 pb-16 text-center">
+        <div className="space-y-8">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto max-w-xl text-lg leading-relaxed text-neutral-600 lg:mx-0"
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-600"
           >
             Enterprise-grade digital solutions without the enterprise complexity or cost.
             Scale smarter, operate efficiently, compete confidently.
@@ -57,7 +57,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link href="/contact">
               <Button variant="primary" size="lg" title="Free consultation included">
@@ -75,7 +75,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-6 pt-4 text-sm text-neutral-500 lg:justify-start"
+            className="flex flex-wrap items-center justify-center gap-6 pt-4 text-sm text-neutral-500"
           >
             {trustItems.map((item, i) => (
               <span key={i} className="flex items-center gap-2">
@@ -85,25 +85,6 @@ export function Hero() {
             ))}
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative flex-1"
-        >
-          <div className="relative aspect-[4/3] max-w-xl overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 shadow-xl shadow-primary/10 lg:aspect-video">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200">
-              <div className="rounded-xl border-2 border-dashed border-neutral-300 bg-white/80 p-8 text-center">
-                <Layers className="mx-auto h-16 w-16 text-primary/60" />
-                <p className="mt-2 font-heading text-sm font-medium text-neutral-600">
-                  Dashboard / Product screenshot
-                </p>
-                <p className="text-xs text-neutral-500">Replace with hero visual</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
