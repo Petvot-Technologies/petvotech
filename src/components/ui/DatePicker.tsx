@@ -6,9 +6,13 @@ import { Calendar, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function formatDisplayDate(value: string): string {
-  if (!value) return "";
-  const d = new Date(value + "T12:00:00");
-  return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+  if (!value || typeof value !== "string") return "";
+  const parts = value.trim().split("-").map(Number);
+  if (parts.length !== 3 || parts.some(Number.isNaN)) return value;
+  const [y, m, d] = parts;
+  const date = new Date(y, m - 1, d);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
 }
 
 function getMonthDays(year: number, month: number) {
@@ -61,38 +65,58 @@ export function DatePicker({
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0, width: 0 });
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const calendarHeight = 320;
+  const calendarWidth = 280;
+
   const [view, setView] = useState(() => {
     if (value) {
-      const [y, m] = value.split("-").map(Number);
-      return { year: y, month: m - 1 };
+      const parts = value.split("-").map(Number);
+      if (parts.length >= 2 && !parts.slice(0, 2).some(Number.isNaN))
+        return { year: parts[0], month: parts[1] - 1 };
     }
     const t = new Date();
     return { year: t.getFullYear(), month: t.getMonth() };
   });
   const ref = useRef<HTMLDivElement>(null);
+  const portalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (value) {
+      const parts = value.split("-").map(Number);
+      if (parts.length >= 2 && !parts.slice(0, 2).some(Number.isNaN))
+        setView({ year: parts[0], month: parts[1] - 1 });
+    }
+  }, [value]);
 
   useEffect(() => {
     if (!open) return;
     if (value) {
-      const [y, m] = value.split("-").map(Number);
-      setView({ year: y, month: m - 1 });
+      const parts = value.split("-").map(Number);
+      if (parts.length >= 2 && !parts.slice(0, 2).some(Number.isNaN))
+        setView({ year: parts[0], month: parts[1] - 1 });
     }
   }, [open, value]);
 
   useEffect(() => {
-    if (open && triggerRef.current) {
+    if (open && triggerRef.current && typeof window !== "undefined") {
       const rect = triggerRef.current.getBoundingClientRect();
-      setPosition({
-        top: rect.bottom + 4,
-        left: rect.left,
-        width: rect.width,
-      });
+      const w = Math.max(calendarWidth, rect.width);
+      const spaceBelow = window.innerHeight - rect.bottom - 8;
+      const spaceAbove = rect.top - 8;
+      const openAbove = spaceBelow < calendarHeight && spaceAbove >= spaceBelow;
+      let top = openAbove ? rect.top - calendarHeight - 4 : rect.bottom + 4;
+      let left = rect.left + rect.width / 2 - w / 2;
+      left = Math.max(8, Math.min(left, window.innerWidth - w - 8));
+      top = Math.max(8, Math.min(top, window.innerHeight - calendarHeight - 8));
+      setPosition({ top, left, width: w });
     }
   }, [open]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      const target = e.target as Node;
+      if (ref.current?.contains(target) || portalRef.current?.contains(target)) return;
+      setOpen(false);
     }
     if (open) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -147,7 +171,7 @@ export function DatePicker({
       >
         <Calendar className="h-5 w-5 shrink-0 text-neutral-400" />
         <span className={value ? "text-neutral-900" : "text-neutral-400"}>
-          {value ? formatDisplayDate(value) : placeholder}
+          {(value != null && String(value).trim() !== "" ? formatDisplayDate(String(value).trim()) : null) ?? placeholder}
         </span>
         <ChevronDown className="ml-auto h-5 w-5 shrink-0 text-neutral-400" />
       </button>
@@ -155,13 +179,15 @@ export function DatePicker({
         typeof document !== "undefined" &&
         createPortal(
           <div
+            ref={portalRef}
             role="dialog"
             aria-label="Choose date"
             style={{
               position: "fixed",
               top: position.top,
               left: position.left,
-              width: Math.max(280, position.width),
+              width: position.width || calendarWidth,
+              maxWidth: "calc(100vw - 16px)",
               zIndex: 1500,
             }}
             className="rounded-xl border border-neutral-200 bg-white p-4 shadow-xl"

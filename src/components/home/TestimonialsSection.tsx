@@ -4,27 +4,7 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { AnimatedStagger } from "@/components/AnimatedSection";
-
-const testimonials = [
-  {
-    quote: "Petvot Tech transformed our reporting process. What used to take our team days now takes minutes.",
-    author: "Client Name",
-    role: "Operations Director",
-    company: "Finance Sector",
-  },
-  {
-    quote: "We needed a solution that could scale with us. Petvot delivered—no over-engineering, no lock-in.",
-    author: "Client Name",
-    role: "CTO",
-    company: "E-commerce",
-  },
-  {
-    quote: "From the first call they listened. The result was a CRM that actually fits how we work.",
-    author: "Client Name",
-    role: "Managing Director",
-    company: "Healthcare",
-  },
-];
+import { testimonials } from "@/data/testimonials";
 
 export function TestimonialsSection() {
   return (
