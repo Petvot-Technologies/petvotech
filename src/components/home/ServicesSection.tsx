@@ -13,10 +13,45 @@ import consultancySvg from "@/assets/svgs/consultancy.svg";
 import outsourcingSvg from "@/assets/svgs/outsourcing.svg";
 
 const services = [
+
+    {
+    badge: "Built Around Your Business Needs",
+    title: " Software Development",
+    benefit: "Software designed specifically for how you work",
+    description:
+      "We build custom web and mobile applications tailored to your business operations, ensuring everything works the way you need it to. From idea to deployment, we create scalable, secure solutions that integrate seamlessly with your existing systems.",
+    features: [
+      "Custom Web & Mobile app development",
+      "Secure API development",
+      "Integration with existing tools & platforms",
+      "Ongoing maintenance & technical support",
+    ],
+    icon: Code2,
+    image: softwareSvg,
+    imageLeft: true,
+  },
+
   {
-    badge: "Digital Transformation",
-    title: "Stop Doing Manually What Software Can Do",
-    benefit: "80% reduction in manual data entry, zero added headcount",
+    badge: "Cloud Solutions",
+    title: "Access Your Data Anywhere, Anytime",
+    benefit: "Secure, scalable infrastructure",
+    description:
+      "We design and deploy secure cloud solutions that scale with your business without the high enterprise costs.",
+    features: [
+      "Cloud migration",
+      "Infrastructure as Code",
+      "Security & compliance",
+      "24/7 monitoring",
+    ],
+    icon: Cloud,
+    image: cloudSvg,
+    imageLeft: false,
+  },
+
+    {
+    badge: "Stop Doing Manually What Software Can Do", 
+    title: "Digital Transformation",
+    benefit: "Reduce manual work and grow without increasing headcount",
     description:
       "We audit your workflows, identify automation opportunities, and implement smart systems that free your team to focus on what humans do best.",
     features: [
@@ -30,47 +65,15 @@ const services = [
     imageLeft: true,
   },
   {
-    badge: "Cloud Solutions",
-    title: "Access Your Data Anywhere, Anytime",
-    benefit: "Secure, scalable infrastructure",
-    description:
-      "Move from on-premise chaos to cloud clarity. We design and deploy cloud solutions that scale with your business without the enterprise price tag.",
-    features: [
-      "Cloud migration",
-      "Infrastructure as Code",
-      "Security & compliance",
-      "24/7 monitoring",
-    ],
-    icon: Cloud,
-    image: cloudSvg,
-    imageLeft: false,
-  },
-  {
-    badge: "Software Development",
-    title: "Get Exactly What You Need, Nothing You Don't",
-    benefit: "Custom apps that fit your workflow",
-    description:
-      "Off-the-shelf rarely fits. We build web and mobile applications tailored to your processes, integrated with your existing tools.",
-    features: [
-      "Web & mobile apps",
-      "API development",
-      "Third-party integrations",
-      "Ongoing support",
-    ],
-    icon: Code2,
-    image: softwareSvg,
-    imageLeft: true,
-  },
-  {
     badge: "Talent Outsourcing",
     title: "Expert Talent Without the Full-Time Cost",
-    benefit: "Scale your team on demand",
+    benefit: "Scale your team quickly and efficiently",
     description:
       "Need a developer, DevOps engineer, or solution architect? We provide vetted talent that integrates with your team and delivers from day one.",
     features: [
-      "Vetted professionals",
-      "Flexible engagement",
-      "Quick onboarding",
+      "Pre-vetted, experienced professionals",
+      "Flexible engagement models",
+      "Quick onboarding process",
       "Managed delivery",
     ],
     icon: Users,
@@ -80,9 +83,9 @@ const services = [
   {
     badge: "IT Consultancy",
     title: "Strategic Guidance When You Need It",
-    benefit: "Informed decisions, clear roadmaps",
+    benefit: "Make informed decisions with a clear technology roadmap",
     description:
-      "Not sure which technology to choose? We provide expert advice on strategy, vendor selection, and implementation planning.",
+      "We help you choose the right technology, evaluate vendors, and plan implementations so your projects stay on track and deliver results.",
     features: [
       "Technology assessment",
       "Vendor evaluation",
@@ -161,12 +164,16 @@ export function ServicesSection() {
   return (
     <section className="bg-gradient-to-b from-white via-primary-light/20 to-white py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
         <AnimatedSection className="text-center">
+          <p className="text-sm font-medium uppercase tracking-wider text-primary py-4">
+            Our Services
+          </p>
           <h2 className="font-heading text-3xl font-bold text-neutral-900 sm:text-4xl">
-            Built for Real Business Challenges
+            Software, Automation & IT Services for Your Business
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
-            From concept to launch, we handle the tech so you can focus on growth
+            From web & mobile apps to workflow automation, IT consultancy, and expert talent, we handle the tech so your team can focus on growth.
           </p>
         </AnimatedSection>
 

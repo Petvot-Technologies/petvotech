@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
 import logo from "@/assets/images/logo-white.png";
 
 const services = [
@@ -20,8 +20,9 @@ const company = [
 
 const social = [
   { href: "https://www.linkedin.com/company/petvot-technologies", icon: Linkedin },
-  { href: "https://twitter.com/petvottech", icon: Facebook },
-  { href: "https://www.instagram.com/petvottech", icon: Instagram },
+  { href: "https://twitter.com/petvottech", icon: Twitter },
+  {href: "https://web.facebook.com/PetvotTechnologies", icon: Facebook },
+  { href: "https://www.instagram.com/petvot_tech/", icon: Instagram },
 ];
 
 export function Footer() {

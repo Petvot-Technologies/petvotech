@@ -64,7 +64,7 @@ export function TeamPreview() {
             <blockquote className="mt-10 border-l-4 border-primary pl-6 italic text-neutral-700">
               &quot;The best code is code you don&apos;t have to write&quot;
               <footer className="mt-1 text-sm not-italic text-neutral-500">
-                — Engineering Philosophy
+                Engineering Philosophy
               </footer>
             </blockquote>
           </AnimatedSection>

@@ -8,7 +8,7 @@ import { caseStudies } from "@/data/caseStudies";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real projects, real results. AI-powered LMS, FinStream Automation, and SaaS event booking—see what Petvot Tech has built.",
+    "Real projects, real results. AI-powered LMS, FinStream Automation, and SaaS event booking see what Petvot Tech has built.",
 };
 
 export default function CaseStudiesPage() {

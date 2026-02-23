@@ -30,7 +30,7 @@ const cards = [
     icon: ShieldCheck,
     title: "Enterprise Experience, Startup Agility",
     description:
-      "20+ years combined expertise across finance, e-commerce, healthcare. We've built for the big guys—now we're bringing that quality to you.",
+      "20+ years combined expertise across finance, e-commerce, healthcare. We've built for the big guys now we're bringing that quality to you.",
     stat: "500+ combined projects",
     link: "Meet the team →",
     href: "/about#team",

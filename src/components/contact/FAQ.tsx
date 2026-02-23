@@ -14,7 +14,7 @@ const items = [
   },
   {
     q: "What industries do you work with?",
-    a: "We serve clients across finance, e-commerce, education, healthcare, and service-based businesses—both in Nigeria and internationally.",
+    a: "We serve clients across finance, e-commerce, education, healthcare, and service-based businesses both in Nigeria and internationally.",
   },
   {
     q: "How do you price your services?",

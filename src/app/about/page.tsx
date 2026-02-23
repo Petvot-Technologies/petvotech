@@ -16,7 +16,7 @@ const values = [
   { letter: "C", name: "Cost-Effective", icon: DollarSign, description: "Enterprise quality doesn't require enterprise budgets. We deliver maximum value at fair, transparent pricing." },
   { letter: "C", name: "Customer-Centricity", icon: Heart, description: "Our clients are at the center of everything we do. We build solutions that solve real business problems, not vanity projects." },
   { letter: "E", name: "Excellence", icon: Star, description: "Innovation is only valuable when it creates practical, scalable impact. We prioritize results over buzzwords." },
-  { letter: "S", name: "Simplicity", icon: Minimize2, description: "We remove complexity, making technology easy to adopt and use. Simple doesn't mean basic—it means thoughtfully designed." },
+  { letter: "S", name: "Simplicity", icon: Minimize2, description: "We remove complexity, making technology easy to adopt and use. Simple doesn't mean basic it means thoughtfully designed." },
   { letter: "S", name: "Sustainable Growth & Integrity", icon: TreePine, description: "We operate honestly and transparently, focusing on long-term partnerships rather than short-term wins." },
 ];
 

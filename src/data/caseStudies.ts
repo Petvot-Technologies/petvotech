@@ -22,7 +22,7 @@ export const caseStudies: CaseStudy[] = [
     dashboardImage: "/case-studies/lms-dashboard.png",
     description: "An enterprise-grade LMS that uses AI to personalize learning paths, automate assessments, and deliver measurable training outcomes.",
     challenge:
-      "The client needed a modern learning platform that could scale across regions, support multiple content types, and provide actionable insights—without the complexity and cost of legacy enterprise LMS solutions.",
+      "The client needed a modern learning platform that could scale across regions, support multiple content types, and provide actionable insights without the complexity and cost of legacy enterprise LMS solutions.",
     solution:
       "We built a cloud-native LMS with AI-driven recommendations, automated grading and feedback, progress analytics, and seamless integration with existing HR and compliance systems. The platform supports blended learning, certifications, and role-based access at enterprise scale.",
     results: [
@@ -49,7 +49,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Manual, spreadsheet-driven finance processes were slowing growth and increasing error risk. The team needed a single system to automate data flows, reconciliation, and regulatory reporting without replacing core banking systems overnight.",
     solution:
-      "We designed and implemented FinStream Automation—a workflow engine that connects existing systems, automates reconciliation and approval flows, and generates audit-ready reports. The solution was built in phases to minimize disruption while delivering quick wins.",
+      "We designed and implemented FinStream Automation, a workflow engine that connects existing systems, automates reconciliation and approval flows, and generates audit-ready reports. The solution was built in phases to minimize disruption while delivering quick wins.",
     results: [
       "Faster reconciliation and fewer manual errors",
       "Automated approval workflows and audit trails",

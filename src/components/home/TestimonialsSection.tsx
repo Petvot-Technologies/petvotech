@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { AnimatedStagger } from "@/components/AnimatedSection";
-import { testimonials } from "@/data/testimonials";
+import { testimonials, type Testimonial } from "@/data/testimonials";
 
 export function TestimonialsSection() {
   return (
@@ -16,7 +16,7 @@ export function TestimonialsSection() {
           <p className="mx-auto mt-4 max-w-xl text-neutral-600">Real feedback from businesses we&apos;ve helped grow</p>
         </div>
         <AnimatedStagger className="mt-16 grid gap-8 md:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {testimonials.map((t: Testimonial, i: number) => (
             <motion.div key={i} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <Card variant="elevated" padding="lg" className="h-full">
                 <Quote className="h-10 w-10 text-primary/40" />

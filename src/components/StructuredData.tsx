@@ -22,7 +22,7 @@ export function OrganizationSchema() {
     sameAs: [
       "https://www.linkedin.com/company/petvottech",
       "https://twitter.com/petvottech",
-      "https://www.instagram.com/petvottech",
+      "https://www.instagram.com/petvot_tech/",
     ],
     founder: [
       { "@type": "Person", name: "Paul Awe", jobTitle: "Co-Founder & CRM Consultant" },

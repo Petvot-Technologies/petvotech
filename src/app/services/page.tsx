@@ -73,7 +73,7 @@ export default function ServicesPage() {
             Everything You Need to Scale Your Business
           </h1>
           <p className="mt-6 text-lg text-neutral-600">
-            From automation to custom apps, cloud infrastructure to expert talent—all backed by 20+ years of combined experience.
+            From automation to custom apps, cloud infrastructure to expert talent all backed by 20+ years of combined experience.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             {serviceAnchors.map((a) => (

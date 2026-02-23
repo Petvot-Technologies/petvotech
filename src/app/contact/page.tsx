@@ -116,7 +116,7 @@ export default function ContactPage() {
       <section className="bg-primary py-16 text-white">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
           <h3 className="font-heading text-2xl font-bold">Prefer to Talk First?</h3>
-          <p className="mt-2 text-white/90">Skip the form—let&apos;s have a conversation</p>
+          <p className="mt-2 text-white/90">Skip the form let&apos;s have a conversation</p>
           <div className="mt-6">
             <ScheduleCallButton variant="white" size="lg">Schedule a Free 30-Min Call</ScheduleCallButton>
           </div>

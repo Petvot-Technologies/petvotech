@@ -1,4 +1,4 @@
-// File: C:\Users\DELL\Documents\workspace\petvotech\src\app\page.tsx
+// File: /Users/admin/Desktop/petvot landing/petvotech/src/app/page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
