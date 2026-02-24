@@ -12,3 +12,5 @@
 /test-results.xml.gz.br.br.br
 /test-results.xml.gz.br.br.br.br
 /.next
+/.env.local
+.env*.local

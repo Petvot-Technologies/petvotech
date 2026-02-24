@@ -24,6 +24,9 @@ const inter = Inter({
   display: "swap",
 });
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const ZOHO_WIDGET_ID = process.env.NEXT_PUBLIC_ZOHO_WIDGET_ID;
+
 export const metadata: Metadata = {
   title: {
     default: "Petvot Tech | Technology That Grows With Your Business",
@@ -105,16 +108,39 @@ export default function RootLayout({
 
         <SpeedInsights />
 
-        {/* Zoho SalesIQ */}
-        <Script id="zoho-salesiq-init" strategy="lazyOnload">
-          {`window.$zoho=window.$zoho || {}; $zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
-        </Script>
+          {/* Google Analytics */}
+         {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
 
-        <Script
-          id="zsiqscript"
-          src="https://salesiq.zohopublic.com/widget?wc=siq91a72b5bf2625d4a3642ef733ecaecf8a0153d48c3dba4b639e387130faad6d9"
-          strategy="lazyOnload"
-        />
+        {/* Zoho SalesIQ */}
+        {ZOHO_WIDGET_ID && (
+          <>
+            <Script id="zoho-salesiq-init" strategy="lazyOnload">
+              {`window.$zoho=window.$zoho || {}; $zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
+            </Script>
+
+            <Script
+              id="zsiqscript"
+              src={`https://salesiq.zohopublic.com/widget?wc=${ZOHO_WIDGET_ID}`}
+              strategy="lazyOnload"
+            />
+          </>
+        )}
       </body>
     </html>
   );
