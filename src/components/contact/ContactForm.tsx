@@ -78,9 +78,12 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus("loading");
     try {
-      // Replace with your API route or email service (Resend, SendGrid, etc.)
-      await new Promise((r) => setTimeout(r, 1000));
-      console.log("Form data:", data);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed");
       setSubmitStatus("success");
     } catch {
       setSubmitStatus("error");
